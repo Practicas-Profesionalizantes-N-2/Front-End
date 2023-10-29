@@ -1,20 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Bienvenida from './pages/Bienvenida/Bienvenida';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Rama de Micaela</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Bienvenida />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
