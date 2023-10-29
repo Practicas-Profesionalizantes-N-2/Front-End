@@ -5,6 +5,7 @@ import styled from 'styled-components/native'
 // importamos los elementos que creamos en componentes
 import MyButton from '../../components/MyButton';
 import TituloInicio from '../../components/TituloInicio';
+import Login from '../Login/Login'
 
 
 const MyImage = styled(Image)
@@ -18,25 +19,26 @@ const MyImage = styled(Image)
 //definimos que estilos le aplicamos
 const estilos = StyleSheet.create({
     container: {
-        marginLeft:"5%",
-        marginRight:"5%",
-       },
+        marginLeft: "5%",
+        marginRight: "5%",
+    },
 })
 
 const Bienvenida = () => {
 
     return (
-        <View  style={estilos.container}>
+        <View style={estilos.container}>
             <TituloInicio> Mi Educación Sexual Integral</TituloInicio>
             <MyImage
                 style={styled.fotos}
                 source={require('../../assets/mesi.jpeg')} />
-                 <MyButton
-        title="INICIAR APLICACIÓN"
-        color="#81638B"
-        onPress={() => Alert.alert("¡Iniciaste!")}
-      />
+            <MyButton
+                title="INICIAR APLICACIÓN"
+                color="#81638B"
+                onPress={() => Alert.alert("¡Iniciaste!")}
+            />
         </View>
+
 
     )
 }
