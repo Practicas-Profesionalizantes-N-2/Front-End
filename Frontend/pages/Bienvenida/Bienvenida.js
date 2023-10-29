@@ -17,7 +17,7 @@ const MyImage = styled(Image)
 `;
 //definimos que estilos le aplicamos
 const estilos = StyleSheet.create({
-    containerdentro: {
+    container: {
         marginLeft:"5%",
         marginRight:"5%",
        },
@@ -26,7 +26,7 @@ const estilos = StyleSheet.create({
 const Bienvenida = () => {
 
     return (
-        <View  style={estilos.containerdentro}>
+        <View  style={estilos.container}>
             <TituloInicio> Mi Educación Sexual Integral</TituloInicio>
             <MyImage
                 style={styled.fotos}
