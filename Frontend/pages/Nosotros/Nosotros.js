@@ -1,14 +1,14 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, TextField } from 'react-native'
 
-const Nosotros = () => {
+const Nosotro = () => {
     return (
         <View>
-            <Text>
-                Nosotros
-            </Text>
+            <TextField>
+                Nosotros los creadores de mesi
+            </TextField>
         </View>
     )
 }
 
-export default Nosotros
+export default Nosotro
