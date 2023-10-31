@@ -21,7 +21,7 @@ const Inicio = () => {
 
     return (
         <View style={estilos.container}>
-            <TituloInicio> Bienvenido al museo de ESI</TituloInicio>
+            <TituloInicio> Bienvenido a Mi ESI</TituloInicio>
             <TituloNormal> Apunta con tu celular para empezar a EXPLORAR</TituloNormal>
             <MyButton
                 title="Comenzar a explorar"
