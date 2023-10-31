@@ -6,7 +6,7 @@ const Nosotros = () => {
     return (
         <View>
             <TituloInicio>
-                Nosotros
+                Esto va a ser un nosotros
             </TituloInicio>
         </View>
     )
