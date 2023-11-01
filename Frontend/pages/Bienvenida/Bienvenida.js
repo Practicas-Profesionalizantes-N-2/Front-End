@@ -3,9 +3,11 @@ import { StyleSheet, SafeAreaView, Alert, View, Text, Image } from 'react-native
 // para hacer los estilos propios
 import styled from 'styled-components/native'
 // importamos los elementos que creamos en componentes
-import MyButton from '../../components/MyButton';
 import TituloInicio from '../../components/TituloInicio';
 import Login from '../Login/Login'
+import TituloNormal from '../../components/Boton';
+import TituloBienvenida from '../../components/TituloBienvenida';
+import Boton from '../../components/Boton';
 
 
 const MyImage = styled(Image)
@@ -21,6 +23,7 @@ const estilos = StyleSheet.create({
     container: {
         marginLeft: "5%",
         marginRight: "5%",
+        marginTop: "30%",
     },
 })
 
@@ -28,15 +31,12 @@ const Bienvenida = () => {
 
     return (
         <View style={estilos.container}>
-            <TituloInicio> Mi Educación Sexual Integral</TituloInicio>
+            <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
             <MyImage
                 style={styled.fotos}
                 source={require('../../assets/mesi.jpeg')} />
-            <MyButton
-                title="INICIAR APLICACIÓN"
-                color="#81638B"
-                onPress={() => Alert.alert("¡Iniciaste!")}
-            />
+            <Boton onPress={() => Alert.alert("¡Iniciaste!")}>Iniciar Aplicación </Boton>
+
         </View>
 
 
