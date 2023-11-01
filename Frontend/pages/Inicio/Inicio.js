@@ -6,16 +6,9 @@ import styled from 'styled-components/native'
 import MyButton from '../../components/MyButton';
 import TituloInicio from '../../components/TituloInicio';
 import Login from '../Login/Login'
+import TituloNormal from '../../components/TituloNormal';
 
 
-const MyImage = styled(Image)
-    `margin: 5%;
-    marginTop:10%;
-    marginBottom:40%;
-        height: 20%;
-        width:90%;
-        padding:20%;
-`;
 //definimos que estilos le aplicamos
 const estilos = StyleSheet.create({
     container: {
@@ -24,18 +17,16 @@ const estilos = StyleSheet.create({
     },
 })
 
-const Bienvenida = () => {
+const Inicio = () => {
 
     return (
         <View style={estilos.container}>
-            <TituloInicio> Mi Educación Sexual Integral</TituloInicio>
-            <MyImage
-                style={styled.fotos}
-                source={require('../../assets/mesi.jpeg')} />
+            <TituloInicio> Bienvenido al museo de ESI</TituloInicio>
+            <TituloNormal> Apunta con tu celular para empezar a EXPLORAR</TituloNormal>
             <MyButton
-                title="INICIAR APLICACIÓN"
+                title="Comenzar a explorar"
                 color="#81638B"
-                onPress={() => Alert.alert("¡Iniciaste!")}
+                onPress={() => Alert.alert("Comenzamos")}
             />
         </View>
 
@@ -45,4 +36,4 @@ const Bienvenida = () => {
 
 
 
-export default Bienvenida
+export default Inicio
