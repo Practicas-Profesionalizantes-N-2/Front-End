@@ -28,11 +28,14 @@ const Bienvenida = () => {
     return (<>
         <View style={estilos.containerdentro}>
             <TituloInicio> Mi Educación Sexual Integral</TituloInicio>
-            <MyImage
-                style={styled.fotos}
-                source={require('../../assets/mesi.jpeg')} /> 
+                <Text>primera vez en la app?</Text>
             <MyButton
-          title="Go to Login"
+          title="Registrate"
+          onPress={() => navigation.navigate('Registro')}
+        />
+        <Text>ya tenes usuario</Text>
+            <MyButton
+          title="Ingresa"
           onPress={() => navigation.navigate('Login')}
         />
     </View>

@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Bienvenida from './pages/Bienvenida/Bienvenida';
 import Login from './pages/Login/Login';
 import Nosotros from './pages/Nosotros/Nosotros';
+import Registro from './pages/Registro/Registro';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,8 @@ export default App = () => {
           <Stack.Screen name="Home" component={Bienvenida} />
           <Stack.Screen name="Nosotros" component={Nosotros} />
           <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Registro" component={Registro} />
+
         </Stack.Navigator>
         
 
