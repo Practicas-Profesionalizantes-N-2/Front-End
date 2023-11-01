@@ -4,12 +4,12 @@ import  MyButton  from '../../components/MyButton';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function Login() {
+export default function Registro() {
     const navigation = useNavigation();
     return (
         <View>
             <Text>
-                Login
+                Registro
             </Text>
             <MyButton
           title="Nosotros"
