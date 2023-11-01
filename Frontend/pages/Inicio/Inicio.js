@@ -3,10 +3,11 @@ import { StyleSheet, SafeAreaView, Alert, View, Text, Image } from 'react-native
 // para hacer los estilos propios
 import styled from 'styled-components/native'
 // importamos los elementos que creamos en componentes
-import MyButton from '../../components/MyButton';
+
 import TituloInicio from '../../components/TituloInicio';
 import Login from '../Login/Login'
-import TituloNormal from '../../components/TituloNormal';
+import TituloNormal from '../../components/Boton';
+import Boton from '../../components/Boton';
 
 
 //definimos que estilos le aplicamos
@@ -23,7 +24,7 @@ const Inicio = () => {
         <View style={estilos.container}>
             <TituloInicio> Bienvenido al museo de ESI</TituloInicio>
             <TituloNormal> Apunta con tu celular para empezar a EXPLORAR</TituloNormal>
-            <MyButton
+            <Boton
                 title="Comenzar a explorar"
                 color="#81638B"
                 onPress={() => Alert.alert("Comenzamos")}
