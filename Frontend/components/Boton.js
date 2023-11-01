@@ -9,10 +9,9 @@ const Boton = styled.Text
     font-weight:600;
     backgroundColor: #81638B;
     text-align:center;
-    margin:4%;
-    padding:2%;
-    border: 5px solid lightblue;
+    margin:10%;
+    padding:3%;
+    border: 5px solid #CAB6D1;
     border-radius: 20px;`;
-
 
 export default Boton;

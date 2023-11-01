@@ -35,7 +35,7 @@ const Bienvenida = () => {
             <MyImage
                 style={styled.fotos}
                 source={require('../../assets/mesi.jpeg')} />
-            <Boton onPress={() => Alert.alert("¡Iniciaste!")}>Iniciar </Boton>
+            <Boton onPress={() => Alert.alert("¡Iniciaste!")}>Iniciar Aplicación </Boton>
 
         </View>
 

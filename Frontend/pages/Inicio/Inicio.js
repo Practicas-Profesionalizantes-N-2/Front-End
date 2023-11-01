@@ -23,12 +23,9 @@ const Inicio = () => {
     return (
         <View style={estilos.container}>
             <TituloInicio> Bienvenido al museo de ESI</TituloInicio>
-            <TituloNormal> Apunta con tu celular para empezar a EXPLORAR</TituloNormal>
-            <Boton
-                title="Comenzar a explorar"
-                color="#81638B"
-                onPress={() => Alert.alert("Comenzamos")}
-            />
+            <TituloInicio> Apunta con tu celular para empezar a EXPLORAR</TituloInicio>
+            <Boton onPress={() => Alert.alert("¡Iniciaste!")}>Iniciar </Boton>
+
         </View>
 
 
