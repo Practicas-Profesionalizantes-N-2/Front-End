@@ -1,10 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Bienvenida from './pages/Bienvenida/Bienvenida';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App() {
+import Bienvenida from './pages/Bienvenida/Bienvenida';
+import Login from './pages/Login/Login';
+import Nosotros from './pages/Nosotros/Nosotros';
+import Registro from './pages/Registro/Registro';
+import Inicio from './pages/Inicio/Inicio';
+
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import Camara from './pages/Camara/Camara';
+
+
+
+const Stack = createNativeStackNavigator();
+
+export default App = () => {
+  
   return (
-    <Bienvenida />
+    <>
+    <GestureHandlerRootView style={{ flex:1 }}>
+
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Bienvenida} />
+          <Stack.Screen name="Nosotros" component={Nosotros} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Registro" component={Registro} />
+          <Stack.Screen name="Inicio" component={Inicio} />
+          <Stack.Screen name="Camara" component={Camara} />
+
+        </Stack.Navigator>
+      </NavigationContainer>
+      
+      </GestureHandlerRootView>
+    </>
   );
-}
+};
 

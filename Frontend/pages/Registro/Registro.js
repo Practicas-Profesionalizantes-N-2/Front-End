@@ -4,10 +4,11 @@ import Boton from '../../components/Boton';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function Login() {
+export default function Registro() {
     const navigation = useNavigation();
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
+    const [edad, onChangeEdad] = React.useState('');
 
     return (
         <View>
@@ -20,7 +21,13 @@ export default function Login() {
                 onChangeText={onChangePassword}
                 value={password}
                 placeholder="Password" />
-
+            <TextInput
+                style={styles.input}
+                onChangeText={onChangeEdad}
+                value={edad}
+                placeholder="Edad"
+                keyboardType="numeric"
+            />
             <Boton
                 title="Inicio"
                 onPress={() => navigation.push('Inicio')}>Iniciar Sesion</Boton>
@@ -28,7 +35,6 @@ export default function Login() {
             <Boton
                 title="Nosotros"
                 onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
-
         </View>
     )
 }
