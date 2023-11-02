@@ -11,4 +11,8 @@ font-weight:700;
 margin:15%;
 `;
 
+<<<<<<< HEAD
 export default TituloBienvenida;
+=======
+export default TituloBienvenida;
+>>>>>>> Facundo

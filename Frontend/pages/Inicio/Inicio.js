@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { StyleSheet, SafeAreaView, Alert, View, Text, Image } from 'react-native';
 // para hacer los estilos propios
 import styled from 'styled-components/native'
@@ -7,6 +8,16 @@ import styled from 'styled-components/native'
 import TituloInicio from '../../components/TituloInicio';
 import Login from '../Login/Login'
 import TituloNormal from '../../components/Boton';
+=======
+import { StyleSheet, SafeAreaView, Alert, ScrollView, Text, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+// para hacer los estilos propios
+import styled from 'styled-components/native'
+
+// importamos los elementos que creamos en componentes
+import TituloInicio from '../../components/TituloInicio';
+>>>>>>> Facundo
 import Boton from '../../components/Boton';
 
 
@@ -19,6 +30,7 @@ const estilos = StyleSheet.create({
 })
 
 const Inicio = () => {
+<<<<<<< HEAD
 
     return (
         <View style={estilos.container}>
@@ -27,6 +39,17 @@ const Inicio = () => {
             <Boton onPress={() => Alert.alert("¡Iniciaste!")}>Iniciar </Boton>
 
         </View>
+=======
+    const navigation = useNavigation();
+
+    return (
+        <ScrollView style={estilos.container}>
+            <TituloInicio> Bienvenido al museo de ESI</TituloInicio>
+            <TituloInicio> Apunta con tu celular para empezar a EXPLORAR</TituloInicio>
+            <Boton onPress={() => navigation.navigate('Camara')}>Iniciar </Boton>
+
+        </ScrollView>
+>>>>>>> Facundo
 
 
     )
