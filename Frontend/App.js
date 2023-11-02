@@ -5,10 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Bienvenida from './pages/Bienvenida/Bienvenida';
 import Login from './pages/Login/Login';
 import Nosotros from './pages/Nosotros/Nosotros';
-<<<<<<< HEAD
-=======
 import Registro from './pages/Registro/Registro';
->>>>>>> Facundo
 import Inicio from './pages/Inicio/Inicio';
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import { View, Text } from 'react-native'
-import TituloInicio from '../../components/TituloInicio'
-import Boton from '../../components/Boton'
-=======
 import React from 'react'
 import { View, TextInput, StyleSheet } from 'react-native'
 import Boton from '../../components/Boton';
@@ -13,18 +8,9 @@ export default function Login() {
     const navigation = useNavigation();
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
->>>>>>> Facundo
 
     return (
         <View>
-<<<<<<< HEAD
-            <TituloInicio>
-                Login
-                
-
-            </TituloInicio>
-            <Boton onPress={() => Alert.alert("¡Iniciaste!")}>Iniciar </Boton>
-=======
             <TextInput style={styles.input}
                 onChangeText={onChangeEmail}
                 value={email}
@@ -43,7 +29,6 @@ export default function Login() {
                 title="Nosotros"
                 onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
 
->>>>>>> Facundo
         </View>
     )
 }

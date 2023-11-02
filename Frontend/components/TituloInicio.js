@@ -12,10 +12,6 @@ const TituloInicio = styled.Text
     margin:5%;
     marginTop:20%;
     marginBottom:40%`;
-<<<<<<< HEAD
-
-=======
->>>>>>> Facundo
 
 
 

@@ -6,17 +6,9 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 import styled from 'styled-components/native'
 
 // importamos los elementos que creamos en componentes
-<<<<<<< HEAD
-import TituloInicio from '../../components/TituloInicio';
-import Login from '../Login/Login'
-import TituloNormal from '../../components/Boton';
-import TituloBienvenida from '../../components/TituloBienvenida';
-import Boton from '../../components/Boton';
-=======
 import Boton from '../../components/Boton';
 import TituloBienvenida from '../../components/TituloBienvenida';
 import { ScrollView } from 'react-native-gesture-handler';
->>>>>>> Facundo
 
 export const MyImage = styled(Image)
     `margin: 5%;
@@ -28,40 +20,20 @@ export const MyImage = styled(Image)
 `;
 //definimos que estilos le aplicamos
 const estilos = StyleSheet.create({
-<<<<<<< HEAD
-    container: {
-        marginLeft: "5%",
-        marginRight: "5%",
-        marginTop: "30%",
-=======
     containerdentro: {
         marginLeft: "5%",
         marginRight: "5%",
->>>>>>> Facundo
     },
 })
 const Bienvenida = () => {
-<<<<<<< HEAD
-
-    return (
-        <View style={estilos.container}>
-=======
     const navigation = useNavigation();
     return (<>
         
             <ScrollView style={estilos.containerdentro}>
->>>>>>> Facundo
             <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
             <MyImage
                 style={styled.fotos}
                 source={require('../../assets/mesi.jpeg')} />
-<<<<<<< HEAD
-            <Boton onPress={() => Alert.alert("¡Iniciaste!")}>Iniciar Aplicación </Boton>
-
-        </View>
-
-
-=======
                 <Text>Es mi primera vez en la app</Text>
             <Boton
           title="Registrate"
@@ -75,7 +47,6 @@ const Bienvenida = () => {
         </ScrollView>
     
     </>
->>>>>>> Facundo
     )
 }
 

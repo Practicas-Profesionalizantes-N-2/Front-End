@@ -14,8 +14,4 @@ const Boton = styled.Text
     border: 5px solid #CAB6D1;
     border-radius: 20px;`;
 
-<<<<<<< HEAD
 export default Boton;
-=======
-export default Boton;
->>>>>>> Facundo

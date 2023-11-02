@@ -8,8 +8,4 @@ const Container = styled.Container
     marginRight: 5%;
     marginTop: 30%;`;
 
-<<<<<<< HEAD
 export default Container;
-=======
-export default Container;
->>>>>>> Facundo
