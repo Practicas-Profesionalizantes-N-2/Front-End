@@ -12,8 +12,8 @@ const Nosotros = () => {
                 Nosotros
             </TituloInicio>
             <MyButton
-          title="Registro"
-          onPress={() => navigation.push('Registro')}
+        title="Registro"
+        onPress={() => navigation.push('Registro')}
         />
         </View>
     )

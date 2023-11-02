@@ -12,8 +12,8 @@ export default function Login() {
                 Login
             </TituloInicio>
             <MyButton
-          title="Nosotros"
-          onPress={() => navigation.push('Nosotros')}
+        title="Nosotros"
+        onPress={() => navigation.push('Nosotros')}
         />
         </View>
     )
