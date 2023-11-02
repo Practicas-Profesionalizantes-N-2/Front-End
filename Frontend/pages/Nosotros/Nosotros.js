@@ -10,7 +10,7 @@ const Nosotros = () => {
         <View>
             <TituloInicio>
                 Nosotros
-            </Text>
+            </TituloInicio>
             <MyButton
           title="Registro"
           onPress={() => navigation.push('Registro')}

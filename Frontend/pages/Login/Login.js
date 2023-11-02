@@ -6,10 +6,11 @@ import { useNavigation } from '@react-navigation/native';
 export default function Login() {
     const navigation = useNavigation();
     return (
+
         <View>
             <TituloInicio>
                 Login
-            </Text>
+            </TituloInicio>
             <MyButton
           title="Nosotros"
           onPress={() => navigation.push('Nosotros')}
