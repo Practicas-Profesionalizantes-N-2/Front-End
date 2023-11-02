@@ -1,7 +1,8 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import MyButton from '../../components/MyButton'
+import Boton from '../../components/Boton'
 import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Nosotros = () => {
     const navigation = useNavigation();
@@ -11,9 +12,9 @@ const Nosotros = () => {
             <TituloInicio>
                 Nosotros
             </TituloInicio>
-            <MyButton
-        title="Registro"
-        onPress={() => navigation.push('Registro')}
+            <Boton
+          title="Registro"
+          onPress={() => navigation.push('Registro')}
         />
         </View>
     )
