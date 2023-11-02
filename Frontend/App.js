@@ -7,12 +7,16 @@ import Login from './pages/Login/Login';
 import Nosotros from './pages/Nosotros/Nosotros';
 import Registro from './pages/Registro/Registro';
 
+import { NativeViewGestureHandler, ScrollView } from 'react-native-gesture-handler';
+
+
 const Stack = createNativeStackNavigator();
 
 export default App = () => {
   
   return (
     <>
+    
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Bienvenida} />
@@ -25,6 +29,7 @@ export default App = () => {
 
        
       </NavigationContainer>
+      
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import  MyButton  from '../../components/MyButton';
+import  Boton  from '../../components/Boton';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -11,7 +11,7 @@ export default function Login() {
             <Text>
                 Login
             </Text>
-            <MyButton
+            <Boton
           title="Nosotros"
           onPress={() => navigation.push('Nosotros')}
         />

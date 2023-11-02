@@ -5,8 +5,9 @@ import { StyleSheet, SafeAreaView, Alert, View, Text, Image } from 'react-native
 // para hacer los estilos propios
 import styled from 'styled-components/native'
 // importamos los elementos que creamos en componentes
-import MyButton from '../../components/MyButton';
+import Boton from '../../components/Boton';
 import TituloInicio from '../../components/TituloInicio';
+import { FlatList, NativeViewGestureHandler, ScrollView } from 'react-native-gesture-handler';
 
 const MyImage = styled(Image)
     `margin: 5%;
@@ -26,15 +27,19 @@ const estilos = StyleSheet.create({
 const Bienvenida = () => {
     const navigation = useNavigation();
     return (<>
-        <View style={estilos.containerdentro}>
+        <View
+         style={estilos.containerdentro}>
             <TituloInicio> Mi Educación Sexual Integral</TituloInicio>
-                <Text>primera vez en la app?</Text>
-            <MyButton
+            <MyImage
+                style={styled.fotos}
+                source={require('../../assets/mesi.jpeg')} />
+                <Text>Primera vez en la app?</Text>
+            <Boton
           title="Registrate"
           onPress={() => navigation.navigate('Registro')}
         />
-        <Text>ya tenes usuario</Text>
-            <MyButton
+        <Text>Ya tenes usuario</Text>
+            <Boton
           title="Ingresa"
           onPress={() => navigation.navigate('Login')}
         />
