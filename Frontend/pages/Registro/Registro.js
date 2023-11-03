@@ -46,13 +46,11 @@ export default function Registro() {
                 value={edad}
                 placeholder="Edad"
                 keyboardType="numeric" />
-            <Boton
-                title="Inicio"
-                onPress={() => navigation.push('Inicio')}>Registrar</Boton>
 
-            <Boton
-                title="Nosotros"
-                onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+            <Boton onPress={() => navigation.push('Inicio')}>Registrar</Boton>
+
+            <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+
         </ScrollView>
     )
 }
