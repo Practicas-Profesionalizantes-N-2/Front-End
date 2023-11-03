@@ -1,12 +1,13 @@
 import React from 'react'
-import { StyleSheet, SafeAreaView, Alert, View, Text, Image } from 'react-native';
+import { StyleSheet, SafeAreaView, Alert, ScrollView, Text, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 // para hacer los estilos propios
 import styled from 'styled-components/native'
+
 // importamos los elementos que creamos en componentes
-import MyButton from '../../components/MyButton';
 import TituloInicio from '../../components/TituloInicio';
-import Login from '../Login/Login'
-import TituloNormal from '../../components/TituloNormal';
+import Boton from '../../components/Boton';
 
 
 //definimos que estilos le aplicamos
@@ -18,17 +19,15 @@ const estilos = StyleSheet.create({
 })
 
 const Inicio = () => {
+    const navigation = useNavigation();
 
     return (
-        <View style={estilos.container}>
-            <TituloInicio> Bienvenido a Mi ESI</TituloInicio>
-            <TituloNormal> Apunta con tu celular para empezar a EXPLORAR</TituloNormal>
-            <MyButton
-                title="Comenzar a explorar"
-                color="#81638B"
-                onPress={() => Alert.alert("Comenzamos")}
-            />
-        </View>
+        <ScrollView style={estilos.container}>
+            <TituloInicio> Bienvenido al museo de ESI</TituloInicio>
+            <TituloInicio> Apunta con tu celular para empezar a EXPLORAR</TituloInicio>
+            <Boton onPress={() => navigation.navigate('Camara')}>Iniciar </Boton>
+
+        </ScrollView>
 
 
     )
