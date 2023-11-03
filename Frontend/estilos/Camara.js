@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 
+
 export const CamaraStyles = StyleSheet.create({
     container: {
         flex: 1

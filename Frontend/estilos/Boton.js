@@ -2,7 +2,6 @@
 import styled from 'styled-components/native';
 
 //estilos del boton
-
 export const Boton = styled.Text
     `
     font-size: 23px;

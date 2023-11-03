@@ -1,10 +1,7 @@
 // para hacer los estilos propios
 import styled from 'styled-components/native';
 
-//estilo del texto global 
-
 export const TituloBienvenida = styled.Text
-
     `
     font-size: 40px;
     color: #5F4866;
@@ -15,7 +12,6 @@ export const TituloBienvenida = styled.Text
     ;
 
 export const TituloInicio = styled.Text
-   
     `
     font-size: 40px;
     color: #5F4866;

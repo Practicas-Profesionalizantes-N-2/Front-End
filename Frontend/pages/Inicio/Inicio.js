@@ -16,17 +16,18 @@ const Inicio = () => {
     const navigation = useNavigation();
 
     return (
+
         <ScrollView style={Contenedor.containerdentro}>
+
             <TituloInicio> Bienvenido al museo de ESI</TituloInicio>
+
             <TituloInicio> Apunta con tu celular para empezar a EXPLORAR</TituloInicio>
+
             <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
 
         </ScrollView>
 
-
     )
 }
-
-
 
 export default Inicio

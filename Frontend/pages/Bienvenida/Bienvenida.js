@@ -1,7 +1,7 @@
 import * as React from 'react';
+
 //habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
-import { Text } from 'react-native';
 
 // para hacer los estilos propios
 import styled from 'styled-components/native'
@@ -11,6 +11,9 @@ import { Boton } from '../../estilos/Boton';
 import { TituloBienvenida } from '../../estilos/Titulo';
 import { Contenedor } from '../../estilos/Container';
 import { Logo } from '../../estilos/Logo';
+
+//componentes de react-native que se usan en esta pantalla
+import { Text } from 'react-native';
 
 //permitimos que sea scrolleable
 import { ScrollView } from 'react-native-gesture-handler';

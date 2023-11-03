@@ -1,5 +1,9 @@
 import React from 'react'
+
+//componentes de react-native que se usan en esta pantalla
 import { View, Text, ImageBackground } from 'react-native'
+
+// importamos 
 import { Boton } from '../../estilos/Boton';
 import { CamaraStyles } from '../../estilos/Camara';
 
