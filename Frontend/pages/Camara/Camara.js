@@ -1,39 +1,26 @@
 import React from 'react'
-import { View, Text, ImageBackground, StyleSheet } from 'react-native'
-import  Boton  from '../../components/Boton';
+import { View, Text, ImageBackground } from 'react-native'
+import { Boton } from '../../estilos/Boton';
+import { CamaraStyles } from '../../estilos/Camara';
+
+//habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
 
-const image = {uri: 'https://blog.realidad-aumentada.com.co/wp-content/uploads/2020/01/RealidadAumentada-1-scaled.jpg'};
+const image = { uri: 'https://blog.realidad-aumentada.com.co/wp-content/uploads/2020/01/RealidadAumentada-1-scaled.jpg' };
 
-export default function Camara() {
-    const navigation = useNavigation();
-    return (
-        <View style={styles.container}>
-            <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+export default function AR() {
+  const navigation = useNavigation();
+  return (
+    <View style={CamaraStyles.container}>
 
-            <Text style={styles.text}>por ahora te tenes que imaginar que aca aparece la realidad aumentada</Text>
-            
-            <Boton onPress={() => navigation.navigate('Home')}>volver al inicio </Boton>
+      <ImageBackground source={image} resizeMode="cover" style={CamaraStyles.image}>
 
-            </ImageBackground> 
-        </View>
-    )
+        <Text style={CamaraStyles.text}>por ahora, imagina que aca aparece la realidad aumentada</Text>
+
+        <Boton onPress={() => navigation.navigate('Home')}> Volver al inicio </Boton>
+
+      </ImageBackground>
+
+    </View>
+  )
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    image: {
-      flex: 1,
-      justifyContent: 'center',
-    },
-    text: {
-        color: 'white',
-        fontSize: 42,
-        lineHeight: 84,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        backgroundColor: '#000000c0',
-      },
-  });

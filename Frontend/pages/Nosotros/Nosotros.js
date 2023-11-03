@@ -1,27 +1,34 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import Boton from '../../components/Boton'
+
+//habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
+import { TituloBienvenida } from '../../estilos/Titulo';
+import { Boton } from '../../estilos/Boton';
 import { ScrollView } from 'react-native-gesture-handler';
-import TituloBienvenida from '../../components/TituloBienvenida';
+import { Contenedor } from '../../estilos/Container';
 
 
 const Nosotros = () => {
     const navigation = useNavigation();
 
     return (
-        <View>
+        <ScrollView style={Contenedor.containerdentro}>
+
             <TituloBienvenida>
                 Somos grupo el 10
             </TituloBienvenida>
+
             <TituloBienvenida>
                 M.E.S.I
             </TituloBienvenida>
+
             <TituloBienvenida>
                 Mi Educación Sexual Integral
             </TituloBienvenida>
 
-        </View>
+            <Boton onPress={() => navigation.navigate('Home')}> Volver al inicio </Boton>
+
+        </ScrollView>
     )
 }
 

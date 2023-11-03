@@ -1,7 +1,12 @@
 import React from 'react'
-import { View, TextInput, StyleSheet } from 'react-native'
-import Boton from '../../components/Boton';
+import { View, TextInput } from 'react-native'
+import { Boton } from '../../estilos/Boton';
+import { InputStyles } from '../../estilos/Input';
+
+//habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { Contenedor } from '../../estilos/Container';
 
 
 export default function Registro() {
@@ -11,39 +16,30 @@ export default function Registro() {
     const [edad, onChangeEdad] = React.useState('');
 
     return (
-        <View>
-            <TextInput style={styles.input}
+        <ScrollView style={Contenedor.containerdentro}>
+            <TextInput style={InputStyles.input}
                 onChangeText={onChangeEmail}
                 value={email}
-                placeholder="Email" />
+                placeholder="Email" 
+                keyboardType="email-address"/>
             <TextInput
-                style={styles.input}
+                style={InputStyles.input}
                 onChangeText={onChangePassword}
                 value={password}
                 placeholder="Password" />
             <TextInput
-                style={styles.input}
+                style={InputStyles.input}
                 onChangeText={onChangeEdad}
                 value={edad}
                 placeholder="Edad"
-                keyboardType="numeric"
-            />
+                keyboardType="numeric" />
             <Boton
                 title="Inicio"
-                onPress={() => navigation.push('Inicio')}>Iniciar Sesion</Boton>
+                onPress={() => navigation.push('Inicio')}>Registrar</Boton>
 
             <Boton
                 title="Nosotros"
                 onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
-        </View>
+        </ScrollView>
     )
 }
-
-const styles = StyleSheet.create({
-    input: {
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-    },
-});
