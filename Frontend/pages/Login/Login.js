@@ -19,12 +19,15 @@ export default function Login() {
                 onChangeText={onChangeEmail}
                 value={email}
                 placeholder="Email"
-                keyboardType="email-address" />
+                keyboardType="email-address"
+                autoComplete='email' />
             <TextInput
                 style={InputStyles.input}
                 onChangeText={onChangePassword}
                 value={password}
-                placeholder="Password" />
+                placeholder="Password"
+                type="password" 
+                secureTextEntry={true}/>
 
             <Boton onPress={() => navigation.push('Inicio')}>Iniciar Sesion</Boton>
 

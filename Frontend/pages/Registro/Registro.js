@@ -26,13 +26,14 @@ export default function Registro() {
                 style={InputStyles.input}
                 onChangeText={onChangePassword}
                 value={password}
-                placeholder="Password" />
+                placeholder="Password"
+                secureTextEntry={true}/>
             <TextInput
                 style={InputStyles.input}
                 onChangeText={onChangeEdad}
                 value={edad}
                 placeholder="Edad"
-                keyboardType="numeric" />
+                keyboardType="numeric"/>
             <Boton
                 title="Inicio"
                 onPress={() => navigation.push('Inicio')}>Registrar</Boton>
@@ -43,3 +44,5 @@ export default function Registro() {
         </ScrollView>
     )
 }
+
+

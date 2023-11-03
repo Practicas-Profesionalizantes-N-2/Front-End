@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 
 export const Boton = styled.Text
     `
-    font-size: 25px;
+    font-size: 23px;
     color: white;
     font-weight:600;
     backgroundColor: #5F4866;
