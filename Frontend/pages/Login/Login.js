@@ -1,8 +1,16 @@
 import React from 'react'
-import { View, TextInput, StyleSheet } from 'react-native'
-import Boton from '../../components/Boton';
-import { useNavigation } from '@react-navigation/native';
 
+//componentes de react-native que se usan en esta pantalla
+import { TextInput } from 'react-native'
+
+//habilita la navegacion hacia otras pantallas
+import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
+
+// importamos
+import { Contenedor } from '../../estilos/Container';
+import { InputStyles } from '../../estilos/Input';
+import { Boton } from '../../estilos/Boton';
 
 export default function Login() {
     const navigation = useNavigation();
@@ -10,35 +18,28 @@ export default function Login() {
     const [password, onChangePassword] = React.useState('');
 
     return (
+        <ScrollView style={Contenedor.containerdentro}>
 
-        <View>
-            <TextInput style={styles.input}
+            <TextInput style={InputStyles.input}
                 onChangeText={onChangeEmail}
                 value={email}
-                placeholder="Email" />
+                placeholder="Email"
+                keyboardType="email-address"
+                autoComplete='email' />
+
             <TextInput
-                style={styles.input}
+                style={InputStyles.input}
                 onChangeText={onChangePassword}
                 value={password}
-                placeholder="Password" />
+                placeholder="Password"
+                type="password"
+                secureTextEntry={true} />
 
-            <Boton
-                title="Inicio"
-                onPress={() => navigation.push('Inicio')}>Iniciar Sesion</Boton>
+            <Boton onPress={() => navigation.push('Inicio')}>Iniciar Sesion</Boton>
 
-            <Boton
-                title="Nosotros"
-                onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+            <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
 
-        </View>
+        </ScrollView>
     )
 }
 
-const styles = StyleSheet.create({
-    input: {
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-    },
-});
