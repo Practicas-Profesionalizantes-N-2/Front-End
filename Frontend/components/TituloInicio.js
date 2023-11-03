@@ -3,7 +3,8 @@ import styled from 'styled-components/native';
 //estilo del texto global 
 
 //margin-top:75%; usaremos bastante
-const TituloNormal = styled.Text
+const TituloInicio = styled.Text
+   
     `font-size: 40px;
     color: #81638B;
     text-align:center;
@@ -13,4 +14,5 @@ const TituloNormal = styled.Text
     marginBottom:40%`;
 
 
-export default TituloNormal;
+
+export default TituloInicio;
