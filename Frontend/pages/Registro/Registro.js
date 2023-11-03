@@ -1,6 +1,4 @@
 import React from 'react'
-
-//importamos
 import { TextInput } from 'react-native'
 import { Boton } from '../../estilos/Boton';
 import { InputStyles } from '../../estilos/Input';
@@ -46,11 +44,13 @@ export default function Registro() {
                 value={edad}
                 placeholder="Edad"
                 keyboardType="numeric" />
+            <Boton
+                title="Inicio"
+                onPress={() => navigation.push('Inicio')}>Registrar</Boton>
 
-            <Boton onPress={() => navigation.push('Inicio')}>Registrar</Boton>
-
-            <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
-
+            <Boton
+                title="Nosotros"
+                onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
         </ScrollView>
     )
 }
