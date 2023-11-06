@@ -26,13 +26,14 @@ export default App = () => {
     <GestureHandlerRootView style={{ flex:1 }}>
 
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={Bienvenida} />
-          <Stack.Screen name="Nosotros" component={Nosotros} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Registro" component={Registro} />
-          <Stack.Screen name="Inicio" component={Inicio} />
-          <Stack.Screen name="AR" component={AR} />
+        <Stack.Navigator >
+          <Stack.Screen name="Home" component={Bienvenida}   options={{ headerShown: false }}/>
+          <Stack.Screen name="Nosotros" component={Nosotros}   options={{ headerShown: false }}/>
+          <Stack.Screen name="Login" component={Login}   options={{ headerShown: false }}/>
+          <Stack.Screen name="Registro" component={Registro}   options={{ headerShown: false }}/>
+          <Stack.Screen name="Inicio" component={Inicio}   options={{ headerShown: false }} />
+          <Stack.Screen name="AR" component={AR}   options={{ headerShown: false }}/>
+          
 
         </Stack.Navigator>
       </NavigationContainer>

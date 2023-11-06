@@ -1,7 +1,7 @@
 import React from 'react'
 
 //importamos
-import { TextInput } from 'react-native'
+import { TextInput, View } from 'react-native'
 import { Boton } from '../../estilos/Boton';
 import { InputStyles } from '../../estilos/Input';
 
@@ -9,6 +9,7 @@ import { InputStyles } from '../../estilos/Input';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Contenedor } from '../../estilos/Container';
+import { TituloCabecera } from '../../estilos/Titulo';
 
 
 export default function Registro() {
@@ -20,7 +21,9 @@ export default function Registro() {
     const [edad, onChangeEdad] = React.useState('');
 
     return (
-        <ScrollView style={Contenedor.containerdentro}>
+        <ScrollView style={Contenedor.total}>
+             <TituloCabecera> REGISTRARME </TituloCabecera>
+        <View style={Contenedor.containerdentro}>
             <TextInput style={InputStyles.input}
                 onChangeText={onChangeNombre}
                 value={nombre}
@@ -47,9 +50,10 @@ export default function Registro() {
                 placeholder="Edad"
                 keyboardType="numeric" />
 
-            <Boton onPress={() => navigation.push('Inicio')}>Registrar</Boton>
+            <Boton onPress={() => navigation.push('Inicio')} >Registrarme</Boton>
 
-            <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+            <Boton onPress={() => navigation.push('Nosotros')}>Ir a Nosotros</Boton>
+            </View>
 
         </ScrollView>
     )
