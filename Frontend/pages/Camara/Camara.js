@@ -16,6 +16,7 @@ export default function AR() {
   const navigation = useNavigation();
   return (
     <View style={CamaraStyles.container}>
+    
 
       <ImageBackground source={image} resizeMode="cover" style={CamaraStyles.image}>
 

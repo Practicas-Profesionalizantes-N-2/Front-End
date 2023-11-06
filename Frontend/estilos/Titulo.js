@@ -22,3 +22,27 @@ export const TituloInicio = styled.Text
     marginBottom:10%
     `
     ;
+
+    export const TituloNormal = styled.Text
+    `
+    font-size: 20px;
+    color: #5F4866;
+    text-align:center;
+    font-weight:700;
+    margin:1%;
+    marginBottom:-5%;
+    marginTop:10%;
+    `
+    ;
+    export const TituloCabecera = styled.Text
+    `
+    font-size: 28px;
+    color: #5F4866;
+    text-align:center;
+    font-weight:100;
+    margin:1%;
+    marginBottom:-8%;
+    marginTop:20%;
+    `
+    ;
+
