@@ -1,13 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Bienvenida from './pages/Bienvenida/Bienvenida';
-import Login from './pages/Login/Login';
-import Nosotros from './pages/Nosotros/Nosotros';
-import Inicio from './pages/Inicio/Inicio';
+import Routes from './Routes/index.js';
 
-export default function App() {
+//En app.js importamos la posibilidad de "scroll"
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+export default App = () => {
+  
   return (
-    <Bienvenida />
+    <>
+      <GestureHandlerRootView style={{ flex:1 }}>
+      <Routes/> 
+      </GestureHandlerRootView>
+    </>
   );
-}
+};
 
