@@ -23,18 +23,18 @@ const Bienvenida = () => {
     return (
         <>
             <ScrollView style={Contenedor.total}>
-           
+
                 <View style={Contenedor.containerdentro}>
 
-                <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
+                    <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
 
-                <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
+                    <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
 
-                <TituloNormal>Ya tengo un usuario </TituloNormal>
-                <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesion</Boton>
+                    <TituloNormal>Ya tengo un usuario </TituloNormal>
+                    <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesion</Boton>
 
-                <TituloNormal>Es mi primera vez en la app</TituloNormal>
-                <Boton onPress={() => navigation.navigate('Registro')}>Registrarme</Boton>
+                    <TituloNormal>Es mi primera vez en la app</TituloNormal>
+                    <Boton onPress={() => navigation.navigate('Registro')}>Registrarme</Boton>
 
                 </View>
 

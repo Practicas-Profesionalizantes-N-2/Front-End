@@ -17,17 +17,17 @@ const Inicio = () => {
 
     return (
         <ScrollView style={Contenedor.total}>
-             <TituloCabecera> BIENVENIDO </TituloCabecera>
-        <View style={Contenedor.containerdentro}>
+            <TituloCabecera> BIENVENIDO </TituloCabecera>
+            <View style={Contenedor.containerdentro}>
 
 
-            <TituloInicio>Este es nuestro Museo de ESI</TituloInicio>
+                <TituloInicio>Mi ESI</TituloInicio>
 
-            <TituloInicio> Apunta con tu celular para empezar a EXPLORAR</TituloInicio>
+                <TituloInicio> Apunta con tu celular para empezar a EXPLORAR</TituloInicio>
 
-            <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
+                <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
 
-</View>
+            </View>
 
         </ScrollView>
 
