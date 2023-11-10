@@ -1,46 +1,47 @@
-import React from 'react'
-import { StyleSheet, SafeAreaView, Alert, View, Text, Image } from 'react-native';
+import * as React from 'react';
+
+//habilita la navegacion hacia otras pantallas
+import { useNavigation } from '@react-navigation/native';
+
 // para hacer los estilos propios
 import styled from 'styled-components/native'
-// importamos los elementos que creamos en componentes
-import MyButton from '../../components/MyButton';
-import TituloInicio from '../../components/TituloInicio';
 
+// importamos 
+import { Boton } from '../../estilos/Boton';
+import { TituloBienvenida, TituloNormal } from '../../estilos/Titulo';
+import { Contenedor } from '../../estilos/Container';
+import { Logo } from '../../estilos/Logo';
 
-const MyImage = styled(Image)
-    `margin: 5%;
-    marginTop:10%;
-    marginBottom:40%;
-        height: 20%;
-        width:90%;
-        padding:20%;
-`;
-//definimos que estilos le aplicamos
-const estilos = StyleSheet.create({
-    containerdentro: {
-        marginLeft:"5%",
-        marginRight:"5%",
-       },
-})
+//componentes de react-native que se usan en esta pantalla
+import { Text, View } from 'react-native';
+
+//permitimos que sea scrolleable
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Bienvenida = () => {
-
+    const navigation = useNavigation();
     return (
-        <View  style={estilos.containerdentro}>
-            <TituloInicio> Mi Educación Sexual Integral</TituloInicio>
-            <MyImage
-                style={styled.fotos}
-                source={require('../../assets/mesi.jpeg')} />
-                 <MyButton
-        title="INICIAR APLICACIÓN"
-        color="#81638B"
-        onPress={() => Alert.alert("¡Iniciaste!")}
-      />
-        </View>
+        <>
+            <ScrollView style={Contenedor.total}>
 
+                <View style={Contenedor.containerdentro}>
+
+                    <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
+
+                    <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
+
+                    <TituloNormal>Ya tengo un usuario </TituloNormal>
+                    <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesion</Boton>
+
+                    <TituloNormal>Es mi primera vez en la app</TituloNormal>
+                    <Boton onPress={() => navigation.navigate('Registro')}>Registrarme</Boton>
+
+                </View>
+
+            </ScrollView>
+
+        </>
     )
 }
-
-
 
 export default Bienvenida
