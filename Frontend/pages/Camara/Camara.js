@@ -17,7 +17,6 @@ export default function AR() {
   return (
     <View style={CamaraStyles.container}>
     
-
       <ImageBackground source={image} resizeMode="cover" style={CamaraStyles.image}>
 
         <Text style={CamaraStyles.text}>por ahora, imagina que aca aparece la realidad aumentada</Text>
