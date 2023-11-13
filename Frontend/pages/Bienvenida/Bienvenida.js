@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useContext} from 'react';
 
 //habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
