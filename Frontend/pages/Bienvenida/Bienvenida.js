@@ -18,28 +18,27 @@ import { Text, View } from 'react-native';
 //permitimos que sea scrolleable
 import { ScrollView } from 'react-native-gesture-handler';
 
+//import para manejar los temas.
+import { ThemeProvider } from 'styled-components';
+import { ThemesContext } from '../../App';
+
 const Bienvenida = () => {
+    const theme = useContext(ThemesContext)
     const navigation = useNavigation();
     return (
         <>
-            <ScrollView style={Contenedor.total}>
-
-                <View style={Contenedor.containerdentro}>
-
-                    <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
-
-                    <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
-
-                    <TituloNormal>Ya tengo un usuario </TituloNormal>
-                    <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesion</Boton>
-
-                    <TituloNormal>Es mi primera vez en la app</TituloNormal>
-                    <Boton onPress={() => navigation.navigate('Registro')}>Registrarme</Boton>
-
-                </View>
-
-            </ScrollView>
-
+            <ThemeProvider theme={theme.theme}>
+                <ScrollView style={Contenedor.total}>
+                    <View style={Contenedor.containerdentro}>
+                        <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
+                        <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
+                        <TituloNormal>Ya tengo un usuario </TituloNormal>
+                        <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesion</Boton>
+                        <TituloNormal>Es mi primera vez en la app</TituloNormal>
+                        <Boton onPress={() => navigation.navigate('Registro')}>Registrarme</Boton>
+                    </View>
+                </ScrollView>
+            </ThemeProvider>
         </>
     )
 }

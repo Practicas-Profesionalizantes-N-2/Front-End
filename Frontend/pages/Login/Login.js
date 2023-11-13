@@ -13,36 +13,39 @@ import { InputStyles } from '../../estilos/Input';
 import { Boton } from '../../estilos/Boton';
 import { TituloCabecera, TituloNormal } from '../../estilos/Titulo';
 
+//import para manejar los temas.
+import { ThemeProvider } from 'styled-components';
+import { ThemesContext } from '../../App';
+
 export default function Login() {
+    const theme = useContext(ThemesContext)
     const navigation = useNavigation();
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
 
     return (
-        <ScrollView style={Contenedor.total}>
-            <TituloCabecera> LOGIN </TituloCabecera>
-            <View style={Contenedor.containerdentro}>
-                <TextInput style={InputStyles.input}
-                    onChangeText={onChangeEmail}
-                    value={email}
-                    placeholder="Email"
-                    keyboardType="email-address"
-                    autoComplete='email' />
-
-                <TextInput
-                    style={InputStyles.input}
-                    onChangeText={onChangePassword}
-                    value={password}
-                    placeholder="Password"
-                    type="password"
-                    secureTextEntry={true} />
-
-                <Boton onPress={() => navigation.push('Inicio')}>Iniciar Sesion</Boton>
-
-                <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
-
-            </View>
-        </ScrollView>
+        <ThemeProvider theme={theme.theme}>
+            <ScrollView style={Contenedor.total}>
+                <TituloCabecera> LOGIN </TituloCabecera>
+                <View style={Contenedor.containerdentro}>
+                    <TextInput style={InputStyles.input}
+                        onChangeText={onChangeEmail}
+                        value={email}
+                        placeholder="Email"
+                        keyboardType="email-address"
+                        autoComplete='email' />
+                    <TextInput
+                        style={InputStyles.input}
+                        onChangeText={onChangePassword}
+                        value={password}
+                        placeholder="Password"
+                        type="password"
+                        secureTextEntry={true} />
+                    <Boton onPress={() => navigation.push('Inicio')}>Iniciar Sesion</Boton>
+                    <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+                </View>
+            </ScrollView>
+        </ThemeProvider>
     )
 }
 
