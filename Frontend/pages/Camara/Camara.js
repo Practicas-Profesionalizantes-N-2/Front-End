@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react';
 
 //componentes de react-native que se usan en esta pantalla
 import { View, Text, ImageBackground } from 'react-native'
