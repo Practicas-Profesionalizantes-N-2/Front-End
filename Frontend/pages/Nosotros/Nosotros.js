@@ -17,30 +17,28 @@ import styled from 'styled-components';
 //componentes de react-native que se usan en esta pantalla
 import { Text, View } from 'react-native';
 
+//import para manejar los temas.
+import { ThemeProvider } from 'styled-components';
+import { ThemesContext } from '../../App';
+
 
 const Nosotros = () => {
     const navigation = useNavigation();
-
+    const theme = useContext(ThemesContext)
     return (
+        <ThemeProvider theme={theme.theme}>
         <ScrollView style={Contenedor.total}>
-             <TituloCabecera> NOSOTROS </TituloCabecera>
-        <View style={Contenedor.containerdentro}>
+            <TituloCabecera> NOSOTROS </TituloCabecera>
+            <View style={Contenedor.containerdentro}>
                 <TituloBienvenida>
                     Somos el grupo 10
                 </TituloBienvenida>
-
                 <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
-
-
-         
-
                 <TituloNormal> Esperemos te guste navegar por nuestra aplicación que viene en proceso desde Julio de este año </TituloNormal>
-
-                <Boton onPress={() => navigation.navigate('Home')} options={{headerShown:false}}> Volver al inicio </Boton>
+                <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver al inicio </Boton>
             </View>
         </ScrollView>
-
-
+        </ThemeProvider>
     )
 }
 
