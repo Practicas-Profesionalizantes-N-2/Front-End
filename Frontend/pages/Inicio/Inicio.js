@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react';
 
 //permitimos que se pueda hacer "scroll" si es necesario 
 import { ScrollView, View } from 'react-native';
@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 
 // importamos los elementos que creamos en componentes
 import { TituloCabecera, TituloInicio } from '../../estilos/Titulo';
-import { Boton } from '../../estilos/Boton';
+import { Boton, themeDefault, themeDeuteranopia } from '../../estilos/Boton';
 import { Contenedor } from '../../estilos/Container';
 
 //import para manejar los temas.
