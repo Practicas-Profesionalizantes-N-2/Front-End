@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 
 // importaciones para el funcionamiento de "React Navigation Native"
 import { NavigationContainer } from '@react-navigation/native';
@@ -15,19 +15,28 @@ import AR from '../pages/Camara/Camara';
 //la constante stack contiene todas las Pantallas (componentes)
 const Stack = createNativeStackNavigator();
 
+//importamos los temas para el provider 
+import { themeDefault, themeDeuteranopia } from '../estilos/Boton';
+
+//Context usado para pasar los temas de daltonismo
+export const ThemesContext = React.createContext();
+
 //la app se inica en la "Screen" que este primera
 function Routes() {
+    const [theme, setTheme] = useState(themeDefault)
     return (
-        <NavigationContainer>
-            <Stack.Navigator >
-                <Stack.Screen name="Home" component={Bienvenida} options={{ headerShown: false }} />
-                <Stack.Screen name="Nosotros" component={Nosotros} options={{ headerShown: false }} />
-                <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-                <Stack.Screen name="Registro" component={Registro} options={{ headerShown: false }} />
-                <Stack.Screen name="Inicio" component={Inicio} options={{ headerShown: false }} />
-                <Stack.Screen name="AR" component={AR} options={{ headerShown: false }} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <ThemesContext.Provider value={{ theme, setTheme }}>
+            <NavigationContainer>
+                <Stack.Navigator >
+                    <Stack.Screen name="Home" component={Bienvenida} options={{ headerShown: false }} />
+                    <Stack.Screen name="Nosotros" component={Nosotros} options={{ headerShown: false }} />
+                    <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+                    <Stack.Screen name="Registro" component={Registro} options={{ headerShown: false }} />
+                    <Stack.Screen name="Inicio" component={Inicio} options={{ headerShown: false }} />
+                    <Stack.Screen name="AR" component={AR} options={{ headerShown: false }} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        </ThemesContext.Provider >
     );
 }
 

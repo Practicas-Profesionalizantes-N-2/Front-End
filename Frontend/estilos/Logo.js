@@ -9,7 +9,7 @@ export const Logo = styled(Image)
     `
     margin: 5%;
     marginTop:10%;
-    marginBottom:20%;
+    marginBottom:5%;
     height: 20%;
     width:90%;
     padding:20%;

@@ -4,13 +4,11 @@ import Routes from './Routes/index.js';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default App = () => {
-  
+
   return (
-    <>
-      <GestureHandlerRootView style={{ flex:1 }}>
-      <Routes/> 
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <Routes />
       </GestureHandlerRootView>
-    </>
   );
 };
 

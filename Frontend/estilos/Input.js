@@ -4,11 +4,12 @@ import { StyleSheet } from 'react-native'
 export const InputStyles = StyleSheet.create({
     input: {
         height: 50,
-        margin: 12,
+        margin: 1,
         borderWidth: 1,
         padding: 10,
         borderColor: '#5F4866',
         borderRadius: 8,
-        marginTop:50,
+        marginTop:40,
+        marginBottom:10
     },
 });
