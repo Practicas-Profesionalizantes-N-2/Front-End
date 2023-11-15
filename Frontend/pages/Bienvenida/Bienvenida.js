@@ -20,7 +20,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
-import { ThemesContext } from '../../App';
+import { ThemesContext } from '../../Routes';
 
 const Bienvenida = () => {
     const theme = useContext(ThemesContext)

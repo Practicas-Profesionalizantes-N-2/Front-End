@@ -12,7 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
-import { ThemesContext } from '../../App';
+import { ThemesContext } from '../../Routes';
 
 const image = { uri: 'https://blog.realidad-aumentada.com.co/wp-content/uploads/2020/01/RealidadAumentada-1-scaled.jpg' };
 

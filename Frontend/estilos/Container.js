@@ -5,9 +5,9 @@ export const Contenedor = StyleSheet.create({
     containerdentro: {
         backgroundColor: 'white',
         padding: '7%',
-        marginTop:'20%',
+        marginTop: '15%'
     },
-    total:{
+    total: {
         backgroundColor: 'white',
     }
 })
