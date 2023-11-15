@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 
 //permitimos que se pueda hacer "scroll" si es necesario 
 import { ScrollView, View } from 'react-native';
@@ -13,7 +13,7 @@ import { Contenedor } from '../../estilos/Container';
 
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
-import { ThemesContext } from '../../App';
+import { ThemesContext } from '../../Routes';
 
 const Inicio = () => {
     const navigation = useNavigation();

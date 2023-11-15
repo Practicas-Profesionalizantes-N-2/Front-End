@@ -9,7 +9,7 @@ export const Boton = styled.Text
     font-weight:600;
     background-color: ${(props) => props.theme.background};
     text-align:center;
-    margin:10%;
+    margin:5%;
     padding:3%;
     border-radius: 10px;
     `

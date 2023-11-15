@@ -19,7 +19,7 @@ import { Text, View } from 'react-native';
 
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
-import { ThemesContext } from '../../App';
+import { ThemesContext } from '../../Routes';
 
 
 const Nosotros = () => {
