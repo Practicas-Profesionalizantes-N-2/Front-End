@@ -18,7 +18,7 @@ import { ThemesContext } from '../../Routes';
 const Inicio = () => {
     const navigation = useNavigation();
     const theme = useContext(ThemesContext)
-    function handleTheme(value) {
+    function  handleTheme(value) {
         theme.setTheme(value)
     }
     return (

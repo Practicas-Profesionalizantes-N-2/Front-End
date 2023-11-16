@@ -15,6 +15,8 @@ import AR from '../pages/Camara/Camara';
 //la constante stack contiene todas las Pantallas (componentes)
 const Stack = createNativeStackNavigator();
 
+const cors = require('cors');
+
 //importamos los temas para el provider 
 import { themeDefault, themeDeuteranopia } from '../estilos/Boton';
 

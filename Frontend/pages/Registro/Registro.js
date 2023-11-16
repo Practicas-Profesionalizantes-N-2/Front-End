@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 //importamos
 import { TextInput, View } from 'react-native'
@@ -14,6 +14,8 @@ import { TituloCabecera } from '../../estilos/Titulo';
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
+
+import axios from 'axios';
 
 //requerimos el validator
 const validator = require('validator');
@@ -37,13 +39,21 @@ const validatePassword = (password) => {
 export default function Registro() {
     const theme = useContext(ThemesContext)
     const navigation = useNavigation();
-    const [nombre, onChangeNombre] = React.useState('');
-    const [apellido, onChangeApellido] = React.useState('');
-    const [email, onChangeEmail] = React.useState('');
-    const [password, onChangePassword] = React.useState('');
-    const [edad, onChangeEdad] = React.useState('');
+    const [name, setName] = React.useState('');
+    const [lastname, setLastName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [age, setAge] = React.useState('');
+
+    const URL = 'http://localhost:3000/api/register'
 
     const handleRegistro = () => {
+
+        //const res = axios.post('http://localhost:3000/api/register', { nombre: name, apellido: lastname, email: email, password: password, edad: age })
+        const res = fetch(URL, { nombre: name, apellido: lastname, email: email, password: password, edad: age })
+            .then(res => res.json())
+            .catch(res => res.error)
+        console.log(res.nuevoUsuario)
         // pide el valor del form y valida con validateEmail
         if (!validateEmail(email)) {
             return;
@@ -57,35 +67,38 @@ export default function Registro() {
         navigation.push('Inicio');
     };
 
+
+
     return (
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
-                <TituloCabecera> REGISTRARME </TituloCabecera>
+                <TituloCabecera> REGISTRARse </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
                     <TextInput style={InputStyles.input}
-                        onChangeText={onChangeNombre}
-                        value={nombre}
-                        placeholder="Nombre" />
+                        value={name}
+                        onChangeText={setName}
+                        placeholder="Nombre" /
+                    >
                     <TextInput style={InputStyles.input}
-                        onChangeText={onChangeApellido}
-                        value={apellido}
+                        onChangeText={(text) => setLastName(text)}
+                        value={lastname}
                         placeholder="Apellido" />
                     <TextInput style={InputStyles.input}
-                        onChangeText={onChangeEmail}
+                        onChangeText={(text) => setEmail(text)}
                         value={email}
                         placeholder="Email"
                         keyboardType="email-address" />
                     <TextInput
                         style={InputStyles.input}
-                        onChangeText={onChangePassword}
+                        onChangeText={(text) => setPassword(text)}
                         value={password}
                         placeholder="Password"
                         secureTextEntry={true}
                     />
                     <TextInput
                         style={InputStyles.input}
-                        onChangeText={onChangeEdad}
-                        value={edad}
+                        onChangeText={(text) => setAge(text)}
+                        value={age}
                         placeholder="Edad"
                         keyboardType="numeric" />
                     <Boton onPress={() => handleRegistro()} >Registrarme</Boton>
