@@ -45,16 +45,43 @@ export default function Registro() {
     const [password, setPassword] = React.useState('');
     const [age, setAge] = React.useState('');
 
-    const URL = 'http://localhost:3000/api/register'
+    const URL = 'http://10.0.10.237:3000/api/register'
 
-    const handleRegistro = () => {
+    const handleRegistro = async () => {
 
         //const res = axios.post('http://localhost:3000/api/register', { nombre: name, apellido: lastname, email: email, password: password, edad: age })
-        const res = fetch(URL, { nombre: name, apellido: lastname, email: email, password: password, edad: age })
-            .then(res => res.json())
-            .catch(res => res.error)
-        console.log(res.nuevoUsuario)
+        // const res = await fetch('http://localhost:3000/api/register', { nombre: name, apellido: lastname, email: email, password: password, edad: age })
+        //     .then(res => {
+        //         res.json()
+        //         console.log(res.json());
+        //     })
+        //     .catch(res => {
+        //         console.log(res);
+        //         res.error
+        //     })
+        //console.log(res.nuevoUsuario, 'fuera del then')
         // pide el valor del form y valida con validateEmail
+        const data = { nombre: name, apellido: lastname, email: email, password: password, edad: age };
+
+        console.log(data);
+        // Realizar petición fetch
+        fetch(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.nuevoUsuario);
+                console.log('Registro enviado');
+                navigation.push('Inicio');
+            })
+            .catch(error => {
+                console.error('Error en la petición:', error.msg);
+            });
+
         if (!validateEmail(email)) {
             return;
         }
@@ -63,7 +90,7 @@ export default function Registro() {
         }
 
         //Placeholder para el 'envio de datos' y navega a la siguiente pagina
-        console.log('Registro enviado');
+
         navigation.push('Inicio');
     };
 
