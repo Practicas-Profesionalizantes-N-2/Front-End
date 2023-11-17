@@ -24,3 +24,13 @@ export const themeDeuteranopia = {
     background: "#656F8A",
     color: "#656F8A",
 }
+
+export const themeTritanopia = {
+    background: "#5f4b53",
+    color: "#5f4b53",
+}
+
+export const themeProtanopia = {
+    background: "#444f67",
+    color: "#444f67",
+}
