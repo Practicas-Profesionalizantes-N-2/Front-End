@@ -1,39 +1,42 @@
-import React from 'react'
-import { StyleSheet, SafeAreaView, Alert, View, Text, Image } from 'react-native';
-// para hacer los estilos propios
-import styled from 'styled-components/native'
+import React, { useContext } from 'react';
+
+//permitimos que se pueda hacer "scroll" si es necesario 
+import { ScrollView, View } from 'react-native';
+
+//habilita la navegacion hacia otras pantallas
+import { useNavigation } from '@react-navigation/native';
+
 // importamos los elementos que creamos en componentes
-import MyButton from '../../components/MyButton';
-import TituloInicio from '../../components/TituloInicio';
-import Login from '../Login/Login'
-import TituloNormal from '../../components/TituloNormal';
+import { TituloCabecera, TituloInicio } from '../../estilos/Titulo';
+import { Boton, themeDefault, themeDeuteranopia, themeProtanopia, themeTritanopia } from '../../estilos/Boton';
+import { Contenedor } from '../../estilos/Container';
 
-
-//definimos que estilos le aplicamos
-const estilos = StyleSheet.create({
-    container: {
-        marginLeft: "5%",
-        marginRight: "5%",
-    },
-})
+//import para manejar los temas.
+import { ThemeProvider } from 'styled-components';
+import { ThemesContext } from '../../Routes';
 
 const Inicio = () => {
-
+    const navigation = useNavigation();
+    const theme = useContext(ThemesContext)
+    function handleTheme(value) {
+        theme.setTheme(value)
+    }
     return (
-        <View style={estilos.container}>
-            <TituloInicio> Bienvenido al museo de ESI</TituloInicio>
-            <TituloNormal> Apunta con tu celular para empezar a EXPLORAR</TituloNormal>
-            <MyButton
-                title="Comenzar a explorar"
-                color="#81638B"
-                onPress={() => Alert.alert("Comenzamos")}
-            />
-        </View>
-
-
+        <ThemeProvider theme={theme.theme}>
+            <ScrollView style={Contenedor.total}>
+                <TituloCabecera> BIENVENIDO </TituloCabecera>
+                <View style={Contenedor.containerdentro}>
+                    <TituloInicio>Mi ESI</TituloInicio>
+                    <TituloInicio> Apunta con tu celular para empezar a EXPLORAR</TituloInicio>
+                    <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
+                    <Boton onPress={() => handleTheme(themeDefault)}>Sin filtro</Boton>
+                    <Boton onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopia</Boton>
+                    <Boton onPress={() => handleTheme(themeTritanopia)}>Tritanopia</Boton>
+                    <Boton onPress={() => handleTheme(themeProtanopia)}>Protanopia</Boton>
+                </View>
+            </ScrollView>
+        </ThemeProvider>
     )
 }
-
-
 
 export default Inicio

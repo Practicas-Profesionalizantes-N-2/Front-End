@@ -1,22 +1,19 @@
 import React, { useContext } from 'react';
 
-//componentes de react-native que se usan en esta pantalla
+//importamos
 import { TextInput, View } from 'react-native'
+import { Boton } from '../../estilos/Boton';
+import { InputStyles } from '../../estilos/Input';
 
 //habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
-
-// importamos
 import { Contenedor } from '../../estilos/Container';
-import { InputStyles } from '../../estilos/Input';
-import { Boton } from '../../estilos/Boton';
-import { TituloCabecera, TituloNormal } from '../../estilos/Titulo';
+import { TituloCabecera } from '../../estilos/Titulo';
 
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
-
 
 //requerimos el validator
 const validator = require('validator');
@@ -31,27 +28,30 @@ const validateEmail = (email) => {
 
 const validatePassword = (password) => {
     if (!validator.isStrongPassword(password)) {
-        alert('La contraseña no cumple los minimos');
+        alert('La contraseña requiere 8 caracteres, una mayuscula, una minuscula, un numero y un simbolo.');
         return false;
     }
     return true;
 };
 
-export default function Login() {
+export default function Registro() {
     const theme = useContext(ThemesContext)
     const navigation = useNavigation();
+    const [nombre, onChangeNombre] = React.useState('');
+    const [apellido, onChangeApellido] = React.useState('');
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
+    const [edad, onChangeEdad] = React.useState('');
 
     const handleRegistro = () => {
         // pide el valor del form y valida con validateEmail
         if (!validateEmail(email)) {
             return;
         }
-
         if (!validatePassword(password)) {
             return;
         }
+
         //Placeholder para el 'envio de datos' y navega a la siguiente pagina
         console.log('Registro enviado');
         navigation.push('Inicio');
@@ -60,27 +60,40 @@ export default function Login() {
     return (
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
-                <TituloCabecera> LOGIN </TituloCabecera>
+                <TituloCabecera> REGISTRARME </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
+                    <TextInput style={InputStyles.input}
+                        onChangeText={onChangeNombre}
+                        value={nombre}
+                        placeholder="Nombre" />
+                    <TextInput style={InputStyles.input}
+                        onChangeText={onChangeApellido}
+                        value={apellido}
+                        placeholder="Apellido" />
                     <TextInput style={InputStyles.input}
                         onChangeText={onChangeEmail}
                         value={email}
                         placeholder="Email"
-                        keyboardType="email-address"
-                        autoComplete='email' />
+                        keyboardType="email-address" />
                     <TextInput
                         style={InputStyles.input}
                         onChangeText={onChangePassword}
                         value={password}
                         placeholder="Password"
-                        type="password"
-                        secureTextEntry={true} />
-
-                    <Boton onPress={() => handleRegistro()}>Iniciar Sesion</Boton>
-                    <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+                        secureTextEntry={true}
+                    />
+                    <TextInput
+                        style={InputStyles.input}
+                        onChangeText={onChangeEdad}
+                        value={edad}
+                        placeholder="Edad"
+                        keyboardType="numeric" />
+                    <Boton onPress={() => handleRegistro()} >Registrarme</Boton>
+                    <Boton onPress={() => navigation.push('Nosotros')}>Ir a Nosotros</Boton>
                 </View>
             </ScrollView>
         </ThemeProvider>
     )
 }
+
 
