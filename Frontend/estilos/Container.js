@@ -9,6 +9,7 @@ export const Contenedor = StyleSheet.create({
     },
     total: {
         backgroundColor: 'white',
-    }
+    },
 })
+
 
