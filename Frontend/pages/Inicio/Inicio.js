@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 
 // importamos los elementos que creamos en componentes
 import { TituloCabecera, TituloInicio } from '../../estilos/Titulo';
-import { Boton, themeDefault, themeDeuteranopia } from '../../estilos/Boton';
+import { Boton, themeDefault, themeDeuteranopia, themeProtanopia, themeTritanopia } from '../../estilos/Boton';
 import { Contenedor } from '../../estilos/Container';
 
 //import para manejar los temas.
@@ -29,8 +29,10 @@ const Inicio = () => {
                     <TituloInicio>Mi ESI</TituloInicio>
                     <TituloInicio> Apunta con tu celular para empezar a EXPLORAR</TituloInicio>
                     <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
-                    <Boton value="themeDefault" onPress={() => handleTheme(themeDefault)}>Sin filtro</Boton>
-                    <Boton value="themeDeuteranopia" onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopia</Boton>
+                    <Boton onPress={() => handleTheme(themeDefault)}>Sin filtro</Boton>
+                    <Boton onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopia</Boton>
+                    <Boton onPress={() => handleTheme(themeTritanopia)}>Tritanopia</Boton>
+                    <Boton onPress={() => handleTheme(themeProtanopia)}>Protanopia</Boton>
                 </View>
             </ScrollView>
         </ThemeProvider>

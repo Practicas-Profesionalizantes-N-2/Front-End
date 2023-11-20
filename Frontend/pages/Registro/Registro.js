@@ -28,7 +28,7 @@ const validateEmail = (email) => {
 
 const validatePassword = (password) => {
     if (!validator.isStrongPassword(password)) {
-        alert('La contraseña no cumple los minimos');
+        alert('La contraseña requiere 8 caracteres, una mayuscula, una minuscula, un numero y un simbolo.');
         return false;
     }
     return true;
