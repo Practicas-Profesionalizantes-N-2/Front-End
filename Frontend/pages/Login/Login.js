@@ -31,7 +31,7 @@ const validateEmail = (email) => {
 
 const validatePassword = (password) => {
     if (!validator.isStrongPassword(password)) {
-        alert('La contraseña no cumple los minimos');
+        alert('La contraseña no cumple los mínimos');
         return false;
     }
     return true;
