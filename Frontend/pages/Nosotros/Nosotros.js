@@ -31,10 +31,11 @@ const Nosotros = () => {
             <TituloCabecera> NOSOTROS </TituloCabecera>
             <View style={Contenedor.containerdentro}>
                 <TituloBienvenida>
-                    Somos el grupo 10
+                    Somos el grupo fundador de MESI
                 </TituloBienvenida>
                 <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
                 <TituloNormal> Esperemos te guste navegar por nuestra aplicación que viene en proceso desde Julio de este año </TituloNormal>
+                <TituloChico> Esperemos te guste navegar por nuestra aplicación que viene en proceso desde Julio de este año </TituloChico>
                 <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver al inicio </Boton>
             </View>
         </ScrollView>
