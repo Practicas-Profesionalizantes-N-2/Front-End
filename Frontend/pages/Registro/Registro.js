@@ -79,7 +79,7 @@ export default function Registro() {
                         style={InputStyles.input}
                         onChangeText={onChangePassword}
                         value={password}
-                        placeholder="Password"
+                        placeholder="Contraseña"
                         secureTextEntry={true}
                     />
                     <TextInput

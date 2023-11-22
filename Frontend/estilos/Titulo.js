@@ -41,8 +41,8 @@ export const TituloInicio = styled.Text
     text-align:center;
     font-weight:700;
     margin:1%;
-    marginBottom:-5%;
-    marginTop:10%;
+    marginBottom:5%;
+    marginTop:5%;
     `
     ;
     export const TituloCabecera = styled.Text

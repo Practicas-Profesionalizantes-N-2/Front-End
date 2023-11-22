@@ -14,6 +14,21 @@ export const Boton = styled.Text
     border-radius: 10px;
     `
     ;
+    export const Boton2 = styled.Text
+    `
+    font-size: 23px;
+    color: white;
+    font-weight:600;
+    background-color: ${(props) => props.theme.background};
+    text-align:center;
+    margin:1%;
+    padding:3%;
+    width:190px;
+    border-radius: 10px;
+    flexDirection: row;
+    `
+    ;
+
 
 export const themeDefault = {
     background: "#5F4866",

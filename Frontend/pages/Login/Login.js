@@ -72,7 +72,7 @@ export default function Login() {
                         style={InputStyles.input}
                         onChangeText={onChangePassword}
                         value={password}
-                        placeholder="Password"
+                        placeholder="Contraseña"
                         type="password"
                         secureTextEntry={true} />
 
