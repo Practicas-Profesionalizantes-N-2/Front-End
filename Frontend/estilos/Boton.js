@@ -22,9 +22,10 @@ export const Boton = styled.Text
     background-color: ${(props) => props.theme.background};
     text-align:center;
     margin:2%;
-    display:flex;
-    width:100px;
+    padding:3%;
+    width:170px;
     border-radius: 10px;
+    flexDirection: row;
     `
     ;
 
