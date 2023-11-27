@@ -28,7 +28,7 @@ const validateEmail = (email) => {
 
 const validatePassword = (password) => {
     if (!validator.isStrongPassword(password)) {
-        alert('La contraseña requiere 8 carácteres, una mayúscula, una minúscula, un número y un símbolo.');
+        alert('La contraseña requiere como minimo 8 carácteres, una mayúscula, una minúscula, un número y un símbolo.');
         return false;
     }
     return true;
@@ -37,63 +37,85 @@ const validatePassword = (password) => {
 export default function Registro() {
     const theme = useContext(ThemesContext)
     const navigation = useNavigation();
-    const [nombre, onChangeNombre] = React.useState('');
-    const [apellido, onChangeApellido] = React.useState('');
-    const [email, onChangeEmail] = React.useState('');
-    const [password, onChangePassword] = React.useState('');
-    const [edad, onChangeEdad] = React.useState('');
+    const [name, setName] = React.useState('');
+    const [lastname, setLastName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [age, setAge] = React.useState('');
 
-    const handleRegistro = () => {
+    const URL = 'http://3.15.192.187:3000/api/register'
+
+    const handleRegistro = async () => {
+
+        const data = { name: name, lastname: lastname, email: email, password: password, age: age };
+
+        console.log(data);
+        // Realizar petición fetch
+        fetch(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            
+            .catch(error => {
+                console.error('Error en la petición:', error.msg);
+            });
+
         // pide el valor del form y valida con validateEmail
         if (!validateEmail(email)) {
             return;
         }
+        // pide el valor del form y valida con validatePassword
         if (!validatePassword(password)) {
             return;
         }
 
         //Placeholder para el 'envio de datos' y navega a la siguiente pagina
-        console.log('Registro enviado');
+
         navigation.push('Inicio');
     };
+
+
 
     return (
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
-                <TituloCabecera> REGISTRARME </TituloCabecera>
+                <TituloCabecera> REGISTRO </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
                     <TextInput style={InputStyles.input}
-                        onChangeText={onChangeNombre}
-                        value={nombre}
+                        value={name}
+                        onChangeText={setName}
                         placeholder="Nombre" />
                     <TextInput style={InputStyles.input}
-                        onChangeText={onChangeApellido}
-                        value={apellido}
+                        onChangeText={(text) => setLastName(text)}
+                        value={lastname}
                         placeholder="Apellido" />
                     <TextInput style={InputStyles.input}
-                        onChangeText={onChangeEmail}
+                        onChangeText={(text) => setEmail(text)}
                         value={email}
                         placeholder="Email"
                         keyboardType="email-address" />
                     <TextInput
                         style={InputStyles.input}
-                        onChangeText={onChangePassword}
+                        onChangeText={(text) => setPassword(text)}
                         value={password}
                         placeholder="Contraseña"
                         secureTextEntry={true}
                     />
                     <TextInput
                         style={InputStyles.input}
-                        onChangeText={onChangeEdad}
-                        value={edad}
+                        onChangeText={(text) => setAge(text)}
+                        value={age}
                         placeholder="Edad"
                         keyboardType="numeric" />
-                    <Boton onPress={() => handleRegistro()} >Registrarme</Boton>
-                    <Boton onPress={() => navigation.push('Nosotros')}>Ir a Nosotros</Boton>
+                    <Boton onPress={() => handleRegistro()} > Registrarme </Boton>
+                    <Boton onPress={() => navigation.push('Nosotros')}> Ir a Nosotros </Boton>
                 </View>
             </ScrollView>
         </ThemeProvider>
     )
 }
-
 

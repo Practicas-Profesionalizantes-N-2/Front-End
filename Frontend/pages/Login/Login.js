@@ -43,24 +43,47 @@ export default function Login() {
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
 
-    const handleRegistro = () => {
-        // pide el valor del form y valida con validateEmail
-        if (!validateEmail(email)) {
-            return;
-        }
+    const URL = 'http://3.15.192.187:3000/api/login'
 
-        if (!validatePassword(password)) {
-            return;
-        }
+    const handleInicioSesion = async () => {
+
+        const data = { email: email, password: password };
+
+
+        try {
+            const response = await fetch(URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            //
+            if (!response.ok) {
+                const errorData = await response.json();
+                alert(`Error: ${errorData.message}`);
+                return;
+              }
+          
+              const responseData = await response.json();
+              console.log('Sesión iniciada con éxito');
+              navigation.push('Inicio');
+        } catch (error) {
+        console.error('Error en la petición:', error.message);
+      }
+
+
         //Placeholder para el 'envio de datos' y navega a la siguiente pagina
-        console.log('Registro enviado');
+
         navigation.push('Inicio');
     };
+
+
 
     return (
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
-                <TituloCabecera> LOGIN </TituloCabecera>
+                <TituloCabecera> Inicio de Sesion </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
                     <TextInput style={InputStyles.input}
                         onChangeText={onChangeEmail}
@@ -76,7 +99,7 @@ export default function Login() {
                         type="password"
                         secureTextEntry={true} />
 
-                    <Boton onPress={() => handleRegistro()}>Iniciar Sesion</Boton>
+                    <Boton onPress={() => handleInicioSesion()}>Iniciar Sesion</Boton>
                     <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
                 </View>
             </ScrollView>
