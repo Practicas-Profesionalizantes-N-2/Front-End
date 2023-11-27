@@ -1,37 +1,27 @@
-import React, { useContext } from 'react';
-
-//importamos
-import { TextInput, View } from 'react-native'
+import React, { useContext, useState } from 'react';
+import { TextInput, View, Modal, Text, TouchableOpacity } from 'react-native';
 import { Boton } from '../../estilos/Boton';
 import { InputStyles } from '../../estilos/Input';
-
-//habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Contenedor } from '../../estilos/Container';
 import { TituloCabecera } from '../../estilos/Titulo';
-
-//import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
-
-//requerimos el validator
 const validator = require('validator');
 
 const validateEmail = (email) => {
     if (!validator.isEmail(email)) {
-        alert('El correo electrónico no es válido.');
-        return false;
+        return 'El correo electrónico no es válido.';
     }
-    return true;
+    return '';
 };
 
 const validatePassword = (password) => {
     if (!validator.isStrongPassword(password)) {
-        alert('La contraseña requiere 8 carácteres, una mayúscula, una minúscula, un número y un símbolo.');
-        return false;
+        return 'La contraseña requiere 8 caracteres, una mayúscula, una minúscula, un número y un símbolo.';
     }
-    return true;
+    return '';
 };
 
 export default function Registro() {
@@ -42,17 +32,25 @@ export default function Registro() {
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
     const [edad, onChangeEdad] = React.useState('');
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
 
     const handleRegistro = () => {
-        // pide el valor del form y valida con validateEmail
-        if (!validateEmail(email)) {
+        const emailError = validateEmail(email);
+        const passwordError = validatePassword(password);
+
+        if (emailError) {
+            setModalMessage(emailError);
+            setModalVisible(true);
             return;
         }
-        if (!validatePassword(password)) {
+        if (passwordError) {
+            setModalMessage(passwordError);
+            setModalVisible(true);
             return;
         }
 
-        //Placeholder para el 'envio de datos' y navega a la siguiente pagina
+        // Placeholder para el 'envío de datos' y navegación a la siguiente página
         console.log('Registro enviado');
         navigation.push('Inicio');
     };
@@ -62,7 +60,7 @@ export default function Registro() {
             <ScrollView style={Contenedor.total}>
                 <TituloCabecera> REGISTRARME </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
-                    <TextInput style={InputStyles.input}
+                <TextInput style={InputStyles.input}
                         onChangeText={onChangeNombre}
                         value={nombre}
                         placeholder="Nombre" />
@@ -70,6 +68,12 @@ export default function Registro() {
                         onChangeText={onChangeApellido}
                         value={apellido}
                         placeholder="Apellido" />
+                           <TextInput
+                        style={InputStyles.input}
+                        onChangeText={onChangeEdad}
+                        value={edad}
+                        placeholder="Edad"
+                        keyboardType="numeric" />   
                     <TextInput style={InputStyles.input}
                         onChangeText={onChangeEmail}
                         value={email}
@@ -82,18 +86,23 @@ export default function Registro() {
                         placeholder="Contraseña"
                         secureTextEntry={true}
                     />
-                    <TextInput
-                        style={InputStyles.input}
-                        onChangeText={onChangeEdad}
-                        value={edad}
-                        placeholder="Edad"
-                        keyboardType="numeric" />
-                    <Boton onPress={() => handleRegistro()} >Registrarme</Boton>
+                    
+
+                    <Boton onPress={() => handleRegistro()}>Registrarme</Boton>
                     <Boton onPress={() => navigation.push('Nosotros')}>Ir a Nosotros</Boton>
                 </View>
+
+                <Modal visible={modalVisible} transparent={true} animationType="fade">
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                        <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, alignItems: 'center' }}>
+                            <Text>{modalMessage}</Text>
+                            <TouchableOpacity onPress={() => setModalVisible(false)}>
+                                <Text>Cerrar</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Modal>
             </ScrollView>
         </ThemeProvider>
     )
 }
-
-

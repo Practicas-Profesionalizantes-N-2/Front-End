@@ -1,4 +1,8 @@
 import React, { useContext } from 'react';
+import { useState } from 'react';
+import { Text, TouchableOpacity } from 'react-native';
+// Importamos el modal que instale para que podamos reemplazarlo por los alerts 
+import Modal from 'react-native-modal';
 
 //componentes de react-native que se usan en esta pantalla
 import { TextInput, View } from 'react-native'
@@ -23,7 +27,6 @@ const validator = require('validator');
 
 const validateEmail = (email) => {
     if (!validator.isEmail(email)) {
-        alert('El correo electrónico no es válido.');
         return false;
     }
     return true;
@@ -31,7 +34,6 @@ const validateEmail = (email) => {
 
 const validatePassword = (password) => {
     if (!validator.isStrongPassword(password)) {
-        alert('La contraseña no cumple los mínimos');
         return false;
     }
     return true;
@@ -43,13 +45,21 @@ export default function Login() {
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
 
+
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
+
+
     const handleRegistro = () => {
-        // pide el valor del form y valida con validateEmail
         if (!validateEmail(email)) {
+            setModalMessage('El correo electrónico no es válido.');
+            setModalVisible(true);
             return;
         }
 
         if (!validatePassword(password)) {
+            setModalMessage('La contraseña no cumple los mínimos');
+            setModalVisible(true);
             return;
         }
         //Placeholder para el 'envio de datos' y navega a la siguiente pagina
@@ -78,6 +88,16 @@ export default function Login() {
 
                     <Boton onPress={() => handleRegistro()}>Iniciar Sesion</Boton>
                     <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+                    <Modal isVisible={modalVisible}>
+                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                            <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, alignItems: 'center' }}>
+                                <Text>{modalMessage}</Text>
+                                <TouchableOpacity onPress={() => setModalVisible(false)}>
+                                    <Text>Cerrar</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </Modal>
                 </View>
             </ScrollView>
         </ThemeProvider>
