@@ -60,7 +60,7 @@ export default function Registro() {
             <ScrollView style={Contenedor.total}>
                 <TituloCabecera> REGISTRARME </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
-                <TextInput style={InputStyles.input}
+                    <TextInput style={InputStyles.input}
                         onChangeText={onChangeNombre}
                         value={nombre}
                         placeholder="Nombre" />
@@ -68,12 +68,12 @@ export default function Registro() {
                         onChangeText={onChangeApellido}
                         value={apellido}
                         placeholder="Apellido" />
-                           <TextInput
+                    <TextInput
                         style={InputStyles.input}
                         onChangeText={onChangeEdad}
                         value={edad}
                         placeholder="Edad"
-                        keyboardType="numeric" />   
+                        keyboardType="numeric" />
                     <TextInput style={InputStyles.input}
                         onChangeText={onChangeEmail}
                         value={email}
@@ -86,7 +86,7 @@ export default function Registro() {
                         placeholder="Contraseña"
                         secureTextEntry={true}
                     />
-                    
+
 
                     <Boton onPress={() => handleRegistro()}>Registrarme</Boton>
                     <Boton onPress={() => navigation.push('Nosotros')}>Ir a Nosotros</Boton>
