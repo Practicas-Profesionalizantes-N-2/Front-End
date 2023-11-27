@@ -4,7 +4,20 @@ import { StyleSheet } from 'react-native'
 export const Contenedor = StyleSheet.create({
     containerdentro: {
         backgroundColor: 'white',
-        padding: '10%'
+        padding: '7%',
+        marginTop: '15%'
+        
     },
+    total: {
+        backgroundColor: 'white',
+     
+    },
+    contenedorfiltro:{
+        flexDirection: 'row',
+        margin:'1%',
+        marginLeft:'11%',
+       
+    }
 })
+
 
