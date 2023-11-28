@@ -8,6 +8,9 @@ export const Contenedor = StyleSheet.create({
         marginTop: '15%'
         
     },
+    containerdelfiltro:{
+        backgroundColor: 'white',
+    },
     total: {
         backgroundColor: 'white',
      
@@ -16,7 +19,6 @@ export const Contenedor = StyleSheet.create({
         flexDirection: 'row',
         margin:'1%',
         marginLeft:'11%',
-       
     }
 })
 

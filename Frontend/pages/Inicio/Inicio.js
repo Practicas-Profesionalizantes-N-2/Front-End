@@ -32,16 +32,19 @@ const Inicio = () => {
                     <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
 
                 </View>
-                <View style={Contenedor.contenedorfiltro}>
+                <View style={Contenedor.containerdelfiltro}>
+                    <View style={Contenedor.contenedorfiltro}>
 
-                    <Boton2 onPress={() => handleTheme(themeDefault)}>Sin filtro</Boton2>
-                    <Boton2 onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopia</Boton2>
-
+                        <Boton2 onPress={() => handleTheme(themeDefault)}>Sin filtro</Boton2>
+                        <Boton2 onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopia</Boton2>
+                    </View>
                 </View>
+                <View style={Contenedor.containerdelfiltro}>
                 <View style={Contenedor.contenedorfiltro}>
 
                     <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopia</Boton2>
                     <Boton2 onPress={() => handleTheme(themeProtanopia)}>Protanopia</Boton2>
+                </View>
                 </View>
             </ScrollView>
         </ThemeProvider>
