@@ -43,7 +43,7 @@ export default function Login() {
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
 
-    const URL = 'http://3.15.192.187:3000/api/login'
+    const URL = 'http://3.144.83.220:3000/api/login'
 
     const handleInicioSesion = async () => {
 
@@ -61,12 +61,11 @@ export default function Login() {
             //
             if (!response.ok) {
                 const errorData = await response.json();
-                alert(`Error: ${errorData.message}`);
+                alert(errorData.msg);
                 return;
               }
-          
               const responseData = await response.json();
-              console.log('Sesión iniciada con éxito');
+              alert('Sesión iniciada con éxito');
               navigation.push('Inicio');
         } catch (error) {
         console.error('Error en la petición:', error.message);

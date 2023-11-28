@@ -43,26 +43,34 @@ export default function Registro() {
     const [password, setPassword] = React.useState('');
     const [age, setAge] = React.useState('');
 
-    const URL = 'http://3.15.192.187:3000/api/register'
+    const URL = 'http://3.144.83.220:3000/api/register'
 
     const handleRegistro = async () => {
 
         const data = { name: name, lastname: lastname, email: email, password: password, age: age };
-
+      
         console.log(data);
         // Realizar petición fetch
-        fetch(URL, {
+        try {
+            const response = await fetch(URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
         })
-            .then(res => res.json())
+        if (!response.ok) {
+            const errorData = await response.json();
+            alert(errorData.msg);
+            return;
+          }
+          const responseData = await response.json();
+          alert('Usuario registrado con éxito');
+          navigation.push('Inicio');
+    } catch (error) {
+    console.error('Error en la petición:', error.message);
+  }
             
-            .catch(error => {
-                console.error('Error en la petición:', error.msg);
-            });
 
         // pide el valor del form y valida con validateEmail
         if (!validateEmail(email)) {
