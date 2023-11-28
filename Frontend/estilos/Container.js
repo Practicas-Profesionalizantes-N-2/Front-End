@@ -18,7 +18,7 @@ export const Contenedor = StyleSheet.create({
     contenedorfiltro:{
         flexDirection: 'row',
         margin:'1%',
-        marginLeft:'11%',
+        justifyContent: 'center'
     }
 })
 
