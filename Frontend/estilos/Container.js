@@ -13,11 +13,10 @@ export const Contenedor = StyleSheet.create({
     },
     total: {
         backgroundColor: 'white',
-     
     },
     contenedorfiltro:{
         flexDirection: 'row',
-        margin:'1%',
+        flexWrap:'wrap',
         justifyContent: 'center'
     }
 })
