@@ -6,9 +6,18 @@ export const Contenedor = StyleSheet.create({
         backgroundColor: 'white',
         padding: '7%',
         marginTop: '15%'
+        
     },
     total: {
         backgroundColor: 'white',
+     
+    },
+    contenedorfiltro:{
+        flexDirection: 'row',
+        margin:'1%',
+        marginLeft:'11%',
+       
     }
 })
+
 

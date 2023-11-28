@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 export const TituloBienvenida = styled.Text
     `
     font-size: 40px;
-    color: #5F4866;
+    color: ${(props) => props.theme.background};
     text-align:center;
     font-weight:700;
     margin:10%;
@@ -14,7 +14,7 @@ export const TituloBienvenida = styled.Text
 export const TituloInicio = styled.Text
     `
     font-size: 40px;
-    color: #5F4866;
+    color: ${(props) => props.theme.background};
     text-align:center;
     font-weight:700;
     margin:5%;
@@ -26,7 +26,7 @@ export const TituloInicio = styled.Text
     export const TituloNormal = styled.Text
     `
     font-size: 20px;
-    color: #5F4866;
+    color: ${(props) => props.theme.background};
     text-align:center;
     font-weight:700;
     margin:1%;
@@ -34,10 +34,21 @@ export const TituloInicio = styled.Text
     marginTop:10%;
     `
     ;
+    export const TituloChico = styled.Text
+    `
+    font-size: 15px;
+    color: ${(props) => props.theme.background};
+    text-align:center;
+    font-weight:700;
+    margin:1%;
+    marginBottom:5%;
+    marginTop:5%;
+    `
+    ;
     export const TituloCabecera = styled.Text
     `
     font-size: 28px;
-    color: #5F4866;
+    color: ${(props) => props.theme.background};
     text-align:center;
     font-weight:100;
     margin:1%;
