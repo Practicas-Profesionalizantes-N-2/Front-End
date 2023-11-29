@@ -51,67 +51,63 @@ export default function Login() {
                 body: JSON.stringify(data)
             })
             // Validacion BACKEND
-            if (response.status == 401) { // Si el correo ya esta repetido
-                const errorData = await response.json();{
-                    // Set the modal message with the current error message
+            if (response.status == 401) {
+                const errorData = await response.json(); {
                     setModalMessage(errorData.msg);
-                    // Show the modal
                     setModalVisible(true);
-                  }
+                }
             }
-                // Si los datos estan bien
-                const responseData = await response.json();
-                alert('Sesion iniciada con éxito');
-                // Navega a la siguiente pagina
-                navigation.push('Inicio');
-            } catch (error) {
-            }
-        };
+            const responseData = await response.json();
+            // Si los datos estan bien navega a la siguiente pagina
+            navigation.push('Inicio');
+        } catch (error) {
+        }
+    };
 
 
 
 
 
-        return (
-            <ThemeProvider theme={theme.theme}>
-                <ScrollView style={Contenedor.total}>
-                    <TituloCabecera> Inicio de Sesion </TituloCabecera>
-                    <View style={Contenedor.containerdentro}>
-                        <TextInput style={InputStyles.input}
-                            onChangeText={setEmail}
-                            value={email}
-                            placeholder="Email"
-                            keyboardType="email-address"
-                            autoComplete='email' />
-                        <TextInput
-                            style={InputStyles.input}
-                            onChangeText={setPassword}
-                            value={password}
-                            placeholder="Contraseña"
-                            type="password"
-                            secureTextEntry={true} />
+    return (
+        <ThemeProvider theme={theme.theme}>
+            <ScrollView style={Contenedor.total}>
+                <TituloCabecera> Inicio de Sesion </TituloCabecera>
+                <View style={Contenedor.containerdentro}>
+                    <TextInput style={InputStyles.input}
+                        onChangeText={setEmail}
+                        value={email}
+                        placeholder="Email"
+                        keyboardType="email-address"
+                        autoComplete='email' />
+                    <TextInput
+                        style={InputStyles.input}
+                        onChangeText={setPassword}
+                        value={password}
+                        placeholder="Contraseña"
+                        type="password"
+                        secureTextEntry={true} />
 
-                        <Boton onPress={() => handleInicioSesion()}>Iniciar Sesion</Boton>
-                        <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
-                    </View>
+                    <Boton onPress={() => handleInicioSesion()}>Iniciar Sesion</Boton>
+                    <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+                </View>
 
-                    <Modal visible={modalVisible} transparent={true} animationType="fade">
+                <Modal visible={modalVisible} transparent={true} animationType="fade">
 
-                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-                            <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, alignItems: 'center' }}>
-                                <Text>{modalMessage}</Text>
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                        <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, alignItems: 'center' }}>
+                            <Text>{modalMessage}</Text>
 
-                                <TouchableOpacity onPress={() => setModalVisible(false)} style={{ borderRadius: 10, padding: 10, marginTop: 20, backgroundColor: "lightgrey" }}>
-                                    <Text>Cerrar</Text>
-                                </TouchableOpacity>
-
-                            </View>
+                            <TouchableOpacity onPress={() => setModalVisible(false)} style={{ borderRadius: 10, padding: 10, marginTop: 20, backgroundColor: "lightgrey" }}>
+                                <Text>Cerrar</Text>
+                            </TouchableOpacity>
 
                         </View>
-                    </Modal>
 
-                </ScrollView>
-            </ThemeProvider>
-        )
-    }
+                    </View>
+                </Modal>
+
+            </ScrollView>
+        </ThemeProvider>
+    )
+}
 

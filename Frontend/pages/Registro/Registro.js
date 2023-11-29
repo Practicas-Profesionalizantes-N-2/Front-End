@@ -52,29 +52,28 @@ export default function Registro() {
                 body: JSON.stringify(data)
             })
 
-            // Validacion BACKEND
-            if (response.status == 400) { // Si el correo ya esta repetido
+            // Validacion BACKEND check
+            if (response.status == 400) { // Si los datos estan bien
                 const errorData = await response.json();
                 for (const error of errorData.msg.errors) {
-                    // Set the modal message with the current error message
                     setModalMessage(error.msg);
-                    // Show the modal
                     setModalVisible(true);
-                  }
+                }
             }
-            if (response.status == 401) { // Si el correo ya esta repetido
-                const errorData = await response.json();{
-                    // Set the modal message with the current error message
+            // Validacion BACKEND validator
+            if (response.status == 401) { // Si el correo ya esta registrado
+                const errorData = await response.json(); {
                     setModalMessage(errorData.msg);
-                    // Show the modal
                     setModalVisible(true);
-                  }
+                }
             }
-            // Si no encuentra otro registro con ese mail
             const responseData = await response.json();
-            alert('Usuario registrado con éxito');
+            // Si no encuentra otro registro con ese mail procede a registrar el usuario
+            // Setea en blanco los campos para un proximo registro
+            setName(''), setEmail(''), setAge(''), setPassword(''), setLastName('')
             // Navega a la siguiente pagina
             navigation.push('Inicio');
+
         } catch (error) {
         }
     };
