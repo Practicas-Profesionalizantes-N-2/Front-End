@@ -1,89 +1,82 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
-//importamos
-import { TextInput, View } from 'react-native'
+// Importamos
+import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { Boton } from '../../estilos/Boton';
 import { InputStyles } from '../../estilos/Input';
-
-//habilita la navegacion hacia otras pantallas
-import { useNavigation } from '@react-navigation/native';
-import { ScrollView } from 'react-native-gesture-handler';
 import { Contenedor } from '../../estilos/Container';
 import { TituloCabecera } from '../../estilos/Titulo';
 
-//import para manejar los temas.
+// Habilita la navegacion hacia otras pantallas
+import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
+
+// Import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
 
-//requerimos el validator
-const validator = require('validator');
-
-const validateEmail = (email) => {
-    if (!validator.isEmail(email)) {
-        alert('El correo electrónico no es válido.');
-        return false;
-    }
-    return true;
-};
-
-const validatePassword = (password) => {
-    if (!validator.isStrongPassword(password)) {
-        alert('La contraseña requiere como minimo 8 carácteres, una mayúscula, una minúscula, un número y un símbolo.');
-        return false;
-    }
-    return true;
-};
+import { URLregister } from '../../Routes/url';
 
 export default function Registro() {
+
+    // Temas (colores adaptados - Daltonismo)
     const theme = useContext(ThemesContext)
+
+    // Navegacion entre pantallas
     const navigation = useNavigation();
+
+    // UseState para guardar los datos
     const [name, setName] = React.useState('');
     const [lastname, setLastName] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [age, setAge] = React.useState('');
 
-    const URL = 'http://3.144.83.220:3000/api/register'
+    // Modal
+    // Iniciador 
+    const [modalVisible, setModalVisible] = useState(false);
+    // Mensaje 
+    const [modalMessage, setModalMessage] = useState('');
 
     const handleRegistro = async () => {
 
         const data = { name: name, lastname: lastname, email: email, password: password, age: age };
-      
-        console.log(data);
+
         // Realizar petición fetch
         try {
-            const response = await fetch(URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-        if (!response.ok) {
-            const errorData = await response.json();
-            alert(errorData.msg);
-            return;
-          }
-          const responseData = await response.json();
-          alert('Usuario registrado con éxito');
-          navigation.push('Inicio');
-    } catch (error) {
-    console.error('Error en la petición:', error.message);
-  }
-            
+            const response = await fetch(URLregister, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
 
-        // pide el valor del form y valida con validateEmail
-        if (!validateEmail(email)) {
-            return;
+            // Validacion BACKEND
+            if (response.status == 400) { // Si el correo ya esta repetido
+                const errorData = await response.json();
+                for (const error of errorData.msg.errors) {
+                    // Set the modal message with the current error message
+                    setModalMessage(error.msg);
+                    // Show the modal
+                    setModalVisible(true);
+                  }
+            }
+            if (response.status == 401) { // Si el correo ya esta repetido
+                const errorData = await response.json();{
+                    // Set the modal message with the current error message
+                    setModalMessage(errorData.msg);
+                    // Show the modal
+                    setModalVisible(true);
+                  }
+            }
+            // Si no encuentra otro registro con ese mail
+            const responseData = await response.json();
+            alert('Usuario registrado con éxito');
+            // Navega a la siguiente pagina
+            navigation.push('Inicio');
+        } catch (error) {
         }
-        // pide el valor del form y valida con validatePassword
-        if (!validatePassword(password)) {
-            return;
-        }
-
-        //Placeholder para el 'envio de datos' y navega a la siguiente pagina
-
-        navigation.push('Inicio');
     };
 
 
@@ -122,6 +115,22 @@ export default function Registro() {
                     <Boton onPress={() => handleRegistro()} > Registrarme </Boton>
                     <Boton onPress={() => navigation.push('Nosotros')}> Ir a Nosotros </Boton>
                 </View>
+
+                <Modal visible={modalVisible} transparent={true} animationType="fade">
+
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                        <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, alignItems: 'center' }}>
+                            <Text>{modalMessage}</Text>
+
+                            <TouchableOpacity onPress={() => setModalVisible(false)} style={{ borderRadius: 10, padding: 10, marginTop: 20, backgroundColor: "lightgrey" }}>
+                                <Text>Cerrar</Text>
+                            </TouchableOpacity>
+
+                        </View>
+
+                    </View>
+                </Modal>
+
             </ScrollView>
         </ThemeProvider>
     )

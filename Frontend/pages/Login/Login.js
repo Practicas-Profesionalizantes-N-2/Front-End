@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 //componentes de react-native que se usan en esta pantalla
-import { TextInput, View } from 'react-native'
+import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 //habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
@@ -17,92 +17,101 @@ import { TituloCabecera, TituloNormal } from '../../estilos/Titulo';
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
 
-
-//requerimos el validator
-const validator = require('validator');
-
-const validateEmail = (email) => {
-    if (!validator.isEmail(email)) {
-        alert('El correo electrónico no es válido.');
-        return false;
-    }
-    return true;
-};
-
-const validatePassword = (password) => {
-    if (!validator.isStrongPassword(password)) {
-        alert('La contraseña no cumple los mínimos');
-        return false;
-    }
-    return true;
-};
+import { URLlogin } from '../../Routes/url';
 
 export default function Login() {
-    const theme = useContext(ThemesContext)
-    const navigation = useNavigation();
-    const [email, onChangeEmail] = React.useState('');
-    const [password, onChangePassword] = React.useState('');
 
-    const URL = 'http://3.144.83.220:3000/api/login'
+    // Temas (colores adaptados - Daltonismo)
+    const theme = useContext(ThemesContext)
+
+    // Navegacion entre pantallas
+    const navigation = useNavigation();
+
+    // UseState para guardar los datos
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+
+    // Modal
+    // Iniciador 
+    const [modalVisible, setModalVisible] = useState(false);
+    // Mensaje 
+    const [modalMessage, setModalMessage] = useState('');
 
     const handleInicioSesion = async () => {
 
         const data = { email: email, password: password };
 
-
+        // Realizar petición fetch
         try {
-            const response = await fetch(URL, {
+            const response = await fetch(URLlogin, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data)
             })
-            //
-            if (!response.ok) {
-                const errorData = await response.json();
-                alert(errorData.msg);
-                return;
-              }
-              const responseData = await response.json();
-              alert('Sesión iniciada con éxito');
-              navigation.push('Inicio');
-        } catch (error) {
-        console.error('Error en la petición:', error.message);
-      }
+            // Validacion BACKEND
+            if (response.status == 401) { // Si el correo ya esta repetido
+                const errorData = await response.json();{
+                    // Set the modal message with the current error message
+                    setModalMessage(errorData.msg);
+                    // Show the modal
+                    setModalVisible(true);
+                  }
+            }
+                // Si los datos estan bien
+                const responseData = await response.json();
+                alert('Sesion iniciada con éxito');
+                // Navega a la siguiente pagina
+                navigation.push('Inicio');
+            } catch (error) {
+            }
+        };
 
 
-        //Placeholder para el 'envio de datos' y navega a la siguiente pagina
-
-        navigation.push('Inicio');
-    };
 
 
 
-    return (
-        <ThemeProvider theme={theme.theme}>
-            <ScrollView style={Contenedor.total}>
-                <TituloCabecera> Inicio de Sesion </TituloCabecera>
-                <View style={Contenedor.containerdentro}>
-                    <TextInput style={InputStyles.input}
-                        onChangeText={onChangeEmail}
-                        value={email}
-                        placeholder="Email"
-                        keyboardType="email-address"
-                        autoComplete='email' />
-                    <TextInput
-                        style={InputStyles.input}
-                        onChangeText={onChangePassword}
-                        value={password}
-                        placeholder="Contraseña"
-                        type="password"
-                        secureTextEntry={true} />
+        return (
+            <ThemeProvider theme={theme.theme}>
+                <ScrollView style={Contenedor.total}>
+                    <TituloCabecera> Inicio de Sesion </TituloCabecera>
+                    <View style={Contenedor.containerdentro}>
+                        <TextInput style={InputStyles.input}
+                            onChangeText={setEmail}
+                            value={email}
+                            placeholder="Email"
+                            keyboardType="email-address"
+                            autoComplete='email' />
+                        <TextInput
+                            style={InputStyles.input}
+                            onChangeText={setPassword}
+                            value={password}
+                            placeholder="Contraseña"
+                            type="password"
+                            secureTextEntry={true} />
 
-                    <Boton onPress={() => handleInicioSesion()}>Iniciar Sesion</Boton>
-                    <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
-                </View>
-            </ScrollView>
-        </ThemeProvider>
-    )
-}
+                        <Boton onPress={() => handleInicioSesion()}>Iniciar Sesion</Boton>
+                        <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+                    </View>
+
+                    <Modal visible={modalVisible} transparent={true} animationType="fade">
+
+                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                            <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, alignItems: 'center' }}>
+                                <Text>{modalMessage}</Text>
+
+                                <TouchableOpacity onPress={() => setModalVisible(false)} style={{ borderRadius: 10, padding: 10, marginTop: 20, backgroundColor: "lightgrey" }}>
+                                    <Text>Cerrar</Text>
+                                </TouchableOpacity>
+
+                            </View>
+
+                        </View>
+                    </Modal>
+
+                </ScrollView>
+            </ThemeProvider>
+        )
+    }
 
