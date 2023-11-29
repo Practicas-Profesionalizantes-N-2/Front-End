@@ -89,16 +89,7 @@ export default function Login() {
 
                     <Boton onPress={() => handleInicioSesion()}>Iniciar Sesion</Boton>
                     <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
-                    <Modal isVisible={modalVisible}>
-                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                            <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, alignItems: 'center' }}>
-                                <Text>{modalMessage}</Text>
-                                <TouchableOpacity onPress={() => setModalVisible(false)}>
-                                    <Text>Cerrar</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </Modal>
+                    
                 </View>
 
                 <Modal visible={modalVisible} transparent={true} animationType="fade">
