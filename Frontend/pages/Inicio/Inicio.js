@@ -7,7 +7,7 @@ import { ScrollView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 // importamos los elementos que creamos en componentes
-import { TituloCabecera, TituloInicio, TituloNormal } from '../../estilos/Titulo';
+import { TituloCabecera, TituloInicio } from '../../estilos/Titulo';
 import { Boton, Boton2, themeDefault, themeDeuteranopia, themeProtanopia, themeTritanopia } from '../../estilos/Boton';
 import { Contenedor } from '../../estilos/Container';
 
@@ -24,10 +24,10 @@ const Inicio = () => {
     return (
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
-                <TituloCabecera> BIENVENIDO </TituloCabecera>
+                <TituloCabecera> Bienvenido </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
                     <TituloInicio>Mi ESI</TituloInicio>
-                    <TituloInicio> Apunta con tu celular para empezar a EXPLORAR</TituloInicio>
+                    <TituloInicio> Comenzá a explorar </TituloInicio>
 
                     <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
 
@@ -36,9 +36,9 @@ const Inicio = () => {
                     <View style={Contenedor.contenedorfiltro}>
 
                         <Boton2 onPress={() => handleTheme(themeDefault)}>Sin filtro</Boton2>
-                        <Boton2 onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopia</Boton2>
-                        <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopia</Boton2>
-                        <Boton2 onPress={() => handleTheme(themeProtanopia)}>Protanopia</Boton2>
+                        <Boton2 onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopía</Boton2>
+                        <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopía</Boton2>
+                        <Boton2 onPress={() => handleTheme(themeProtanopia)}>Protanopía</Boton2>
                     </View>
                 </View>
 

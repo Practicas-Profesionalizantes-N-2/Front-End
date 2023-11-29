@@ -11,7 +11,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { Contenedor } from '../../estilos/Container';
 import { InputStyles } from '../../estilos/Input';
 import { Boton } from '../../estilos/Boton';
-import { TituloCabecera, TituloNormal } from '../../estilos/Titulo';
+import { TituloCabecera } from '../../estilos/Titulo';
 
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
@@ -71,7 +71,7 @@ export default function Login() {
     return (
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
-                <TituloCabecera> Inicio de Sesion </TituloCabecera>
+                <TituloCabecera> Inicio de Sesión </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
                     <TextInput style={InputStyles.input}
                         onChangeText={setEmail}
@@ -87,7 +87,7 @@ export default function Login() {
                         type="password"
                         secureTextEntry={true} />
 
-                    <Boton onPress={() => handleInicioSesion()}>Iniciar Sesion</Boton>
+                    <Boton onPress={() => handleInicioSesion()}>Iniciar Sesión</Boton>
                     <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
                     
                 </View>

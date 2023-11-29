@@ -83,7 +83,7 @@ export default function Registro() {
     return (
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
-                <TituloCabecera> REGISTRO </TituloCabecera>
+                <TituloCabecera> Registro </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
                     <TextInput style={InputStyles.input}
                         value={name}
