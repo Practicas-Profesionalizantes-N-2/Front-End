@@ -14,7 +14,7 @@ import { useNavigation } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
 
-const image = { uri: 'https://blog.realidad-aumentada.com.co/wp-content/uploads/2020/01/RealidadAumentada-1-scaled.jpg' };
+const image = { uri: 'https://images.squarespace-cdn.com/content/v1/553a5960e4b049578051b95c/1548411479955-G52NRSO581O3VH30U9XB/realidad+aumentada.jpg' };
 
 export default function AR() {
   const theme = useContext(ThemesContext)

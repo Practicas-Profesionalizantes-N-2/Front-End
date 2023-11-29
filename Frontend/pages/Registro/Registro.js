@@ -93,6 +93,12 @@ export default function Registro() {
                         onChangeText={(text) => setLastName(text)}
                         value={lastname}
                         placeholder="Apellido" />
+                    <TextInput
+                        style={InputStyles.input}
+                        onChangeText={onChangeEdad}
+                        value={edad}
+                        placeholder="Edad"
+                        keyboardType="numeric" />
                     <TextInput style={InputStyles.input}
                         onChangeText={(text) => setEmail(text)}
                         value={email}
@@ -134,4 +140,3 @@ export default function Registro() {
         </ThemeProvider>
     )
 }
-
