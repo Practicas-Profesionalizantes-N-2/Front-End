@@ -1,99 +1,221 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+<<<<<<< HEAD
 
-//importamos
-import { TextInput, View } from 'react-native'
+// Importamos
+import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { Boton } from '../../estilos/Boton';
 import { InputStyles } from '../../estilos/Input';
+import { Contenedor } from '../../estilos/Container';
+import { TituloCabecera } from '../../estilos/Titulo';
 
-//habilita la navegacion hacia otras pantallas
+// Habilita la navegacion hacia otras pantallas
+import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
+
+// Import para manejar los temas.
+import { ThemeProvider } from 'styled-components';
+import { ThemesContext } from '../../Routes';
+
+import { URLregister } from '../../Routes/url';
+=======
+import { TextInput, View, Modal, Text, TouchableOpacity } from 'react-native';
+import { Boton } from '../../estilos/Boton';
+import { InputStyles } from '../../estilos/Input';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Contenedor } from '../../estilos/Container';
 import { TituloCabecera } from '../../estilos/Titulo';
-
-//import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
-
-//requerimos el validator
 const validator = require('validator');
 
 const validateEmail = (email) => {
     if (!validator.isEmail(email)) {
-        alert('El correo electrónico no es válido.');
-        return false;
+        return 'El correo electrónico no es válido.';
     }
-    return true;
+    return '';
 };
 
 const validatePassword = (password) => {
     if (!validator.isStrongPassword(password)) {
-        alert('La contraseña requiere 8 caracteres, una mayuscula, una minuscula, un numero y un simbolo.');
-        return false;
+        return 'La contraseña requiere 8 caracteres, una mayúscula, una minúscula, un número y un símbolo.';
     }
-    return true;
+    return '';
 };
+>>>>>>> Micaela
 
 export default function Registro() {
+
+    // Temas (colores adaptados - Daltonismo)
     const theme = useContext(ThemesContext)
+
+    // Navegacion entre pantallas
     const navigation = useNavigation();
+<<<<<<< HEAD
+
+    // UseState para guardar los datos
+    const [name, setName] = React.useState('');
+    const [lastname, setLastName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [age, setAge] = React.useState('');
+
+    // Modal
+    // Iniciador 
+    const [modalVisible, setModalVisible] = useState(false);
+    // Mensaje 
+    const [modalMessage, setModalMessage] = useState('');
+
+    const handleRegistro = async () => {
+
+        const data = { name: name, lastname: lastname, email: email, password: password, age: age };
+
+        // Realizar petición fetch
+        try {
+            const response = await fetch(URLregister, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+
+            // Validacion BACKEND check
+            if (response.status == 400) { // Si los datos estan bien
+                const errorData = await response.json();
+                for (const error of errorData.msg.errors) {
+                    setModalMessage(error.msg);
+                    setModalVisible(true);
+                }
+            }
+            // Validacion BACKEND validator
+            if (response.status == 401) { // Si el correo ya esta registrado
+                const errorData = await response.json(); {
+                    setModalMessage(errorData.msg);
+                    setModalVisible(true);
+                }
+            }
+            const responseData = await response.json();
+            // Si no encuentra otro registro con ese mail procede a registrar el usuario
+            // Setea en blanco los campos para un proximo registro
+            setName(''), setEmail(''), setAge(''), setPassword(''), setLastName('')
+            // Navega a la siguiente pagina
+            navigation.push('Inicio');
+
+        } catch (error) {
+        }
+=======
     const [nombre, onChangeNombre] = React.useState('');
     const [apellido, onChangeApellido] = React.useState('');
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
     const [edad, onChangeEdad] = React.useState('');
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
 
     const handleRegistro = () => {
-        // pide el valor del form y valida con validateEmail
-        if (!validateEmail(email)) {
+        const emailError = validateEmail(email);
+        const passwordError = validatePassword(password);
+
+        if (emailError) {
+            setModalMessage(emailError);
+            setModalVisible(true);
             return;
         }
-        if (!validatePassword(password)) {
+        if (passwordError) {
+            setModalMessage(passwordError);
+            setModalVisible(true);
             return;
         }
 
-        //Placeholder para el 'envio de datos' y navega a la siguiente pagina
+        // Placeholder para el 'envío de datos' y navegación a la siguiente página
         console.log('Registro enviado');
         navigation.push('Inicio');
+>>>>>>> Micaela
     };
+
+
 
     return (
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
-                <TituloCabecera> REGISTRARME </TituloCabecera>
+                <TituloCabecera> REGISTRO </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
                     <TextInput style={InputStyles.input}
-                        onChangeText={onChangeNombre}
-                        value={nombre}
+                        value={name}
+                        onChangeText={setName}
                         placeholder="Nombre" />
                     <TextInput style={InputStyles.input}
-                        onChangeText={onChangeApellido}
-                        value={apellido}
+                        onChangeText={(text) => setLastName(text)}
+                        value={lastname}
                         placeholder="Apellido" />
-                    <TextInput style={InputStyles.input}
-                        onChangeText={onChangeEmail}
-                        value={email}
-                        placeholder="Email"
-                        keyboardType="email-address" />
-                    <TextInput
-                        style={InputStyles.input}
-                        onChangeText={onChangePassword}
-                        value={password}
-                        placeholder="Password"
-                        secureTextEntry={true}
-                    />
                     <TextInput
                         style={InputStyles.input}
                         onChangeText={onChangeEdad}
                         value={edad}
                         placeholder="Edad"
                         keyboardType="numeric" />
-                    <Boton onPress={() => handleRegistro()} >Registrarme</Boton>
+                    <TextInput style={InputStyles.input}
+                        onChangeText={(text) => setEmail(text)}
+                        value={email}
+                        placeholder="Email"
+                        keyboardType="email-address" />
+                    <TextInput
+                        style={InputStyles.input}
+                        onChangeText={(text) => setPassword(text)}
+                        value={password}
+                        placeholder="Contraseña"
+                        secureTextEntry={true}
+                    />
+<<<<<<< HEAD
+                    <TextInput
+                        style={InputStyles.input}
+                        onChangeText={(text) => setAge(text)}
+                        value={age}
+                        placeholder="Edad"
+                        keyboardType="numeric" />
+                    <Boton onPress={() => handleRegistro()} > Registrarme </Boton>
+                    <Boton onPress={() => navigation.push('Nosotros')}> Ir a Nosotros </Boton>
+                </View>
+
+                <Modal visible={modalVisible} transparent={true} animationType="fade">
+
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                        <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, alignItems: 'center' }}>
+                            <Text>{modalMessage}</Text>
+
+                            <TouchableOpacity onPress={() => setModalVisible(false)} style={{ borderRadius: 10, padding: 10, marginTop: 20, backgroundColor: "lightgrey" }}>
+                                <Text>Cerrar</Text>
+                            </TouchableOpacity>
+
+                        </View>
+
+                    </View>
+                </Modal>
+
+=======
+
+
+                    <Boton onPress={() => handleRegistro()}>Registrarme</Boton>
                     <Boton onPress={() => navigation.push('Nosotros')}>Ir a Nosotros</Boton>
                 </View>
+
+                <Modal visible={modalVisible} transparent={true} animationType="fade">
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                        <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, alignItems: 'center' }}>
+                            <Text>{modalMessage}</Text>
+                            <TouchableOpacity onPress={() => setModalVisible(false)}>
+                                <Text>Cerrar</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Modal>
+>>>>>>> Micaela
             </ScrollView>
         </ThemeProvider>
     )
 }
+<<<<<<< HEAD
 
-
+=======
+>>>>>>> Micaela
