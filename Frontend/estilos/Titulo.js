@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const TituloBienvenida = styled.Text
     `
-    font-size: 40px;
+    font-size: 35px;
     color: ${(props) => props.theme.background};
     text-align:center;
     font-weight:700;
