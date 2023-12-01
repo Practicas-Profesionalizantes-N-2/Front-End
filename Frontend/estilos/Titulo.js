@@ -1,6 +1,8 @@
 // para hacer los estilos propios
 import styled from 'styled-components/native';
 
+//cada estilo tiene definida la propiedad en caso de que seleccionemos por el daltonismo
+
 export const TituloBienvenida = styled.Text
     `
     font-size: 35px;
@@ -10,7 +12,6 @@ export const TituloBienvenida = styled.Text
     margin:10%;
     `
     ;
-
 export const TituloInicio = styled.Text
     `
     font-size: 40px;
@@ -22,7 +23,6 @@ export const TituloInicio = styled.Text
     marginBottom:10%
     `
     ;
-
     export const TituloNormal = styled.Text
     `
     font-size: 20px;

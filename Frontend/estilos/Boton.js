@@ -12,9 +12,8 @@ export const Boton = styled.Text
     margin:5%;
     padding:3%;
     border-radius: 10px;
-    `
-    ;
-export const Boton2 = styled.Text
+    `;
+    export const Boton2 = styled.Text
     `
     font-size: 23px;
     color: white;
@@ -29,32 +28,7 @@ export const Boton2 = styled.Text
     `
     ;
 
-    export const CameraButton = styled.Text
-    `
-    color:${(props) => props.theme.background};
-    display:flex;
-    padding-top:3%;
-    padding-left:3.5%;
-    background-color: white;
-
-    width:55px;
-    height:55px;
-    border-radius:100px;
-    `
-    ;
-
-    export const CentralButton = styled.Text
-    `
-    color:${(props) => props.theme.background};
-    display:flex;
-    padding-top:2.5%;
-    padding-left:3.8%;
-    background-color: white;
-    width:80px;
-    height:80px;
-    border-radius:100px;
-    `
-    ;
+//botones de daltonismo con sus colores definidos 
 
 export const themeDefault = {
     background: "#5F4866",

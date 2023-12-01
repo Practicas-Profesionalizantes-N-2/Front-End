@@ -12,6 +12,6 @@ export const Logo = styled(Image)
     marginBottom:10%;
     height: 20%;
     width:90%;
-    padding:20%;
+    padding:19%;
 `
 ;

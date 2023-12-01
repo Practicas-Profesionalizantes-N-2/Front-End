@@ -51,7 +51,7 @@ export default function Login() {
                 body: JSON.stringify(data)
             })
             // Validacion BACKEND
-            if (response.status == 401) {
+            if (response.status == 401) { // Si la contraseña o el mail estan mal
                 const errorData = await response.json(); {
                     setModalMessage(errorData.msg);
                     setModalVisible(true);
@@ -64,15 +64,12 @@ export default function Login() {
         }
     };
 
-
-
-
-
     return (
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
                 <TituloCabecera> Inicio de Sesión </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
+
                     <TextInput style={InputStyles.input}
                         onChangeText={setEmail}
                         value={email}
