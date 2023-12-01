@@ -8,7 +8,7 @@ import styled from 'styled-components/native'
 
 // importamos 
 import { Boton } from '../../estilos/Boton';
-import { TituloBienvenida, TituloNormal } from '../../estilos/Titulo';
+import { TituloBienvenida, TituloCabecera, TituloNormal } from '../../estilos/Titulo';
 import { Contenedor } from '../../estilos/Container';
 import { Logo } from '../../estilos/Logo';
 
@@ -29,12 +29,11 @@ const Bienvenida = () => {
         <>
             <ThemeProvider theme={theme.theme}>
                 <ScrollView style={Contenedor.total}>
+                <TituloCabecera/>
                     <View style={Contenedor.containerdentro}>
                         <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
-                        <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
-                        <TituloNormal>Ya tengo un usuario </TituloNormal>
-                        <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesion</Boton>
-                        <TituloNormal>Es mi primera vez en la app</TituloNormal>
+                        <Logo style={styled.fotos} source={require('../../assets/mesiLogo.jpeg')} />
+                        <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesión</Boton>
                         <Boton onPress={() => navigation.navigate('Registro')}>Registrarme</Boton>
                     </View>
                 </ScrollView>
