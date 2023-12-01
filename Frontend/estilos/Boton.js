@@ -14,6 +14,47 @@ export const Boton = styled.Text
     border-radius: 10px;
     `
     ;
+export const Boton2 = styled.Text
+    `
+    font-size: 23px;
+    color: white;
+    font-weight:600;
+    background-color: ${(props) => props.theme.background};
+    text-align:center;
+    margin:1%;
+    padding:3%;
+    width:190px;
+    border-radius: 10px;
+    flexDirection: row;
+    `
+    ;
+
+    export const CameraButton = styled.Text
+    `
+    color:${(props) => props.theme.background};
+    display:flex;
+    padding-top:3%;
+    padding-left:3.5%;
+    background-color: white;
+
+    width:55px;
+    height:55px;
+    border-radius:100px;
+    `
+    ;
+
+    export const CentralButton = styled.Text
+    `
+    color:${(props) => props.theme.background};
+    display:flex;
+    padding-top:2.5%;
+    padding-left:3.8%;
+    background-color: white;
+    width:80px;
+    height:80px;
+    border-radius:100px;
+    `
+    ;
 
 export const themeDefault = {
     background: "#5F4866",

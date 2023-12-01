@@ -4,7 +4,7 @@ import React, {useContext} from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 //componentes con sus estilos
-import { TituloBienvenida, TituloCabecera, TituloNormal } from '../../estilos/Titulo';
+import { TituloBienvenida, TituloCabecera, TituloChico } from '../../estilos/Titulo';
 import { Boton } from '../../estilos/Boton';
 import { Contenedor } from '../../estilos/Container';
 import { Logo } from '../../estilos/Logo';
@@ -28,14 +28,16 @@ const Nosotros = () => {
     return (
         <ThemeProvider theme={theme.theme}>
         <ScrollView style={Contenedor.total}>
-            <TituloCabecera> NOSOTROS </TituloCabecera>
+            <TituloCabecera> Nosotros </TituloCabecera>
             <View style={Contenedor.containerdentro}>
                 <TituloBienvenida>
-                    Somos el grupo 10
+                    Somos un equipo de estudiantes del ITS Cipolletti
                 </TituloBienvenida>
                 <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
-                <TituloNormal> Esperemos te guste navegar por nuestra aplicación que viene en proceso desde Julio de este año </TituloNormal>
-                <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver al inicio </Boton>
+                 <TituloChico> Integrantes: 
+                
+                  Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
+                        <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver al inicio </Boton>
             </View>
         </ScrollView>
         </ThemeProvider>

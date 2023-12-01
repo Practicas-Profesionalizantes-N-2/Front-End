@@ -16,7 +16,7 @@ import AR from '../pages/Camara/Camara';
 const Stack = createNativeStackNavigator();
 
 //importamos los temas para el provider 
-import { themeDefault, themeDeuteranopia } from '../estilos/Boton';
+import { themeDefault } from '../estilos/Boton';
 
 //Context usado para pasar los temas de daltonismo
 export const ThemesContext = React.createContext();
