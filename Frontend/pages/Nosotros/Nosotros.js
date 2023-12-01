@@ -33,7 +33,7 @@ const Nosotros = () => {
                 <TituloBienvenida>
                     Somos un equipo de estudiantes del ITS Cipolletti
                 </TituloBienvenida>
-                <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
+                <Logo style={styled.fotos} source={require('../../assets/mesiLogo.jpeg')} />
                  <TituloChico> Integrantes: 
                 
                   Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
