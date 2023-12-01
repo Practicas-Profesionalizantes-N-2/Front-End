@@ -15,7 +15,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import styled from 'styled-components';
 
 //componentes de react-native que se usan en esta pantalla
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
@@ -35,7 +35,6 @@ const Nosotros = () => {
                 </TituloBienvenida>
                 <Logo style={styled.fotos} source={require('../../assets/mesiLogo.jpeg')} />
                  <TituloChico> Integrantes: 
-                
                   Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
                         <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver al inicio </Boton>
             </View>
