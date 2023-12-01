@@ -8,8 +8,16 @@ import { useNavigation } from '@react-navigation/native';
 
 // importamos los elementos que creamos en componentes
 import { TituloCabecera, TituloInicio } from '../../estilos/Titulo';
-import { Boton, Boton2, themeDefault, themeDeuteranopia, themeProtanopia, themeTritanopia } from '../../estilos/Boton';
 import { Contenedor } from '../../estilos/Container';
+import {
+    Boton, Boton2,
+    themeDefault,
+    themeDeuteranopia,
+    themeProtanopia,
+    themeTritanopia
+} from '../../estilos/Boton';
+
+
 
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
@@ -25,16 +33,15 @@ const Inicio = () => {
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
                 <TituloCabecera> Bienvenido </TituloCabecera>
+                
                 <View style={Contenedor.containerdentro}>
                     <TituloInicio>Mi ESI</TituloInicio>
                     <TituloInicio> Comenzá a explorar </TituloInicio>
-
                     <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
-
                 </View>
+
                 <View style={Contenedor.containerdelfiltro}>
                     <View style={Contenedor.contenedorfiltro}>
-
                         <Boton2 onPress={() => handleTheme(themeDefault)}>Sin filtro</Boton2>
                         <Boton2 onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopía</Boton2>
                         <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopía</Boton2>
