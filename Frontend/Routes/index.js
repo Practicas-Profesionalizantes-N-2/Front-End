@@ -27,7 +27,7 @@ function Routes() {
     return (
         <ThemesContext.Provider value={{ theme, setTheme }}>
             <NavigationContainer>
-                <Stack.Navigator >
+                <Stack.Navigator>
                     <Stack.Screen name="Home" component={Bienvenida} options={{ headerShown: false }} />
                     <Stack.Screen name="Nosotros" component={Nosotros} options={{ headerShown: false }} />
                     <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />

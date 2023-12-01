@@ -12,8 +12,7 @@ export const Boton = styled.Text
     margin:5%;
     padding:3%;
     border-radius: 10px;
-    `
-    ;
+    `;
     export const Boton2 = styled.Text
     `
     font-size: 23px;
@@ -29,6 +28,7 @@ export const Boton = styled.Text
     `
     ;
 
+//botones de daltonismo con sus colores definidos 
 
 export const themeDefault = {
     background: "#5F4866",
