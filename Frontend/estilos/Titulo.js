@@ -12,7 +12,6 @@ export const TituloBienvenida = styled.Text
     margin:10%;
     `
     ;
-
 export const TituloInicio = styled.Text
     `
     font-size: 40px;
@@ -24,7 +23,6 @@ export const TituloInicio = styled.Text
     marginBottom:10%
     `
     ;
-
     export const TituloNormal = styled.Text
     `
     font-size: 20px;

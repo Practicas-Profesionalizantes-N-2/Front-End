@@ -8,7 +8,7 @@ import styled from 'styled-components/native'
 
 // importamos 
 import { Boton } from '../../estilos/Boton';
-import { TituloBienvenida, TituloCabecera, TituloNormal } from '../../estilos/Titulo';
+import { TituloBienvenida, TituloCabecera } from '../../estilos/Titulo';
 import { Contenedor } from '../../estilos/Container';
 import { Logo } from '../../estilos/Logo';
 

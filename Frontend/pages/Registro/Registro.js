@@ -1,8 +1,10 @@
 //useContext para los temas y useState para los datos de usuario
-import React, { useContext, useState } from 'react'; 
+import React, { useContext, useState } from 'react';
 
-// Importamos
+// Importamos componentes
 import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native'
+
+// Importamos estilos propios
 import { Boton } from '../../estilos/Boton';
 import { InputStyles } from '../../estilos/Input';
 import { Contenedor } from '../../estilos/Container';
@@ -16,6 +18,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
 
+// Ruta de conexion al Backend
 import { URLregister } from '../../Routes/url';
 
 export default function Registro() {
@@ -54,7 +57,7 @@ export default function Registro() {
             })
 
             // Validacion BACKEND check
-            if (response.status == 400) { // Si los datos estan bien
+            if (response.status == 400) { // Si los datoS estan bien
                 const errorData = await response.json();
                 for (const error of errorData.msg.errors) {
                     setModalMessage(error.msg);
@@ -70,8 +73,10 @@ export default function Registro() {
             }
             const responseData = await response.json();
             // Si no encuentra otro registro con ese mail procede a registrar el usuario
+
             // Setea en blanco los campos para un proximo registro
             setName(''), setEmail(''), setAge(''), setPassword(''), setLastName('')
+
             // Navega a la siguiente pagina
             navigation.push('Inicio');
 
@@ -83,9 +88,13 @@ export default function Registro() {
 
     return (
         <ThemeProvider theme={theme.theme}>
+
             <ScrollView style={Contenedor.total}>
+
                 <TituloCabecera> Registro </TituloCabecera>
+
                 <View style={Contenedor.containerdentro}>
+
                     <TextInput style={InputStyles.input}
                         value={name}
                         onChangeText={setName}
@@ -104,16 +113,17 @@ export default function Registro() {
                         onChangeText={(text) => setPassword(text)}
                         value={password}
                         placeholder="Contraseña"
-                        secureTextEntry={true}
-                    />
+                        secureTextEntry={true} />
                     <TextInput
                         style={InputStyles.input}
                         onChangeText={(text) => setAge(text)}
                         value={age}
                         placeholder="Edad"
                         keyboardType="numeric" />
+
                     <Boton onPress={() => handleRegistro()} > Registrarme </Boton>
                     <Boton onPress={() => navigation.push('Nosotros')}> Ir a Nosotros </Boton>
+
                 </View>
 
                 <Modal visible={modalVisible} transparent={true} animationType="fade">
