@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+//useContext para los temas y useState para los datos de usuario
+import React, { useContext, useState } from 'react'; 
 
 // Importamos
 import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native'
