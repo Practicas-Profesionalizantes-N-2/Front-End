@@ -18,4 +18,16 @@ export const CamaraStyles = StyleSheet.create({
         backgroundColor: '#000000c0',
         margin: '10%'
     },
+    containerButtons: {
+        with:'100%',
+        height:'100%',
+        marginLeft:'10%',
+        marginRight:'10%',
+        marginTop:'-10%',
+        justifyContent:'space-between',
+        alignItems:'flex-end',
+        display: 'flex',
+        flexDirection: 'row',
+    },
 });
+
