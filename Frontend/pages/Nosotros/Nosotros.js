@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 
 //habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
@@ -15,7 +15,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import styled from 'styled-components';
 
 //componentes de react-native que se usan en esta pantalla
-import { View } from 'react-native';
+import { Linking, View } from 'react-native';
 
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
@@ -27,18 +27,22 @@ const Nosotros = () => {
     const theme = useContext(ThemesContext)
     return (
         <ThemeProvider theme={theme.theme}>
-        <ScrollView style={Contenedor.total}>
-            <TituloCabecera> Nosotros </TituloCabecera>
-            <View style={Contenedor.containerdentro}>
-                <TituloBienvenida>
-                    Somos un equipo de estudiantes del ITS Cipolletti
-                </TituloBienvenida>
-                <Logo style={styled.fotos} source={require('../../assets/mesiLogo.jpeg')} />
-                 <TituloChico> Integrantes: 
-                  Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
-                        <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver al inicio </Boton>
-            </View>
-        </ScrollView>
+            <ScrollView style={Contenedor.total}>
+                <TituloCabecera> Nosotros </TituloCabecera>
+                <View style={Contenedor.containerdentro}>
+                    <TituloBienvenida>
+                        Somos un equipo de estudiantes del ITS Cipolletti
+                    </TituloBienvenida>
+                    <Logo style={styled.fotos} source={require('../../assets/mesiLogo.jpeg')} />
+                    <TituloChico> Integrantes:
+                        Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
+                    <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver al inicio </Boton>
+
+                    <Boton onPress={() => Linking.openURL('https://www.spatial.io/s/M-E-S-I-Mi-Educacion-Sexual-Integral-66200b63a2831f9b41c77a7b?share=7341275839470123682')}>
+                        Comenzar experiencia Metaversica
+                    </Boton>
+                </View>
+            </ScrollView>
         </ThemeProvider>
     )
 }
