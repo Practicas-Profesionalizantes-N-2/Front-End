@@ -33,11 +33,15 @@ const Inicio = () => {
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
                 <TituloCabecera> Bienvenido </TituloCabecera>
-                
+
                 <View style={Contenedor.containerdentro}>
                     <TituloInicio>Mi ESI</TituloInicio>
                     <TituloInicio> Comenzá a explorar </TituloInicio>
-                    <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
+
+                    <Boton onPress={() => Linking.openURL('https://www.spatial.io/s/M-E-S-I-Mi-Educacion-Sexual-Integral-66200b63a2831f9b41c77a7b?share=7341275839470123682')}>
+                        Comenzar experiencia Metaversica
+                    </Boton>
+                    
                 </View>
 
                 <View style={Contenedor.containerdelfiltro}>

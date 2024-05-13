@@ -38,9 +38,11 @@ const Nosotros = () => {
                         Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
                     <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver al inicio </Boton>
 
+                    {/* este boton hay que moverlo a inicio cuando el backend este encendido */}
                     <Boton onPress={() => Linking.openURL('https://www.spatial.io/s/M-E-S-I-Mi-Educacion-Sexual-Integral-66200b63a2831f9b41c77a7b?share=7341275839470123682')}>
                         Comenzar experiencia Metaversica
                     </Boton>
+
                 </View>
             </ScrollView>
         </ThemeProvider>
