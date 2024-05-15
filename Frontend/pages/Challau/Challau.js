@@ -25,9 +25,8 @@ const Challau = () => {
             html: `
                   <!DOCTYPE html>
                   <html>
-                    <head></head> // <--add header styles if needed
                     <body>
-                      <div id="baseDiv"><iframe width="100%" height="100%" style="position:absolute; top:0; left: 0" frameborder="0" allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://www.challau.com/town-square/challau-metaverse"/></iframe></div> //<--- add your iframe here
+                      <div id="baseDiv"><iframe width="100%" height="100%" style="position:absolute; top: 100; left: 0" frameborder="0" allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://www.challau.com/office/mesi"/></iframe></div>
                     </body>
                   </html>
             `,

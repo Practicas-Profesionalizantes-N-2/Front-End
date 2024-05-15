@@ -35,7 +35,7 @@ function Routes() {
                     <Stack.Screen name="Registro" component={Registro} options={{ headerShown: false }} />
                     <Stack.Screen name="Inicio" component={Inicio} options={{ headerShown: false }} />
                     <Stack.Screen name="AR" component={AR} options={{ headerShown: false }} />
-                    <Stack.Screen name="Challau" component={Challau} options={{ headerShown: false }} />
+                    <Stack.Screen name="Challau" component={Challau} options={{ headerShown: true }} />
 
                 </Stack.Navigator>
             </NavigationContainer>
