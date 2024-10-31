@@ -1,6 +1,6 @@
- // Direccion la brinda amazon y la cambian cada vez que arranca el server
+ // Direccion la brinda don web y la cambian cada vez que arranca el server
 
-const ip = '3.148.102.108'
+const ip = '149.50.131.9'
 
-export const URLregister = `http://${ip}:3000/api/register`
-export const URLlogin = `http://${ip}:3000/api/login`
+export const URLregister = `http://${ip}:3010/api/register`
+export const URLlogin = `http://${ip}:3010/api/login`

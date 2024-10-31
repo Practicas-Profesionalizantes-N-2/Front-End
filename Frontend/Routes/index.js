@@ -17,8 +17,8 @@ const Stack = createNativeStackNavigator();
 
 //importamos los temas para el provider 
 import { themeDefault, themeDeuteranopia } from '../estilos/Boton';
-import Challau from '../pages/Challau/Challau';
 import Aframe from '../pages/A-Frame/Aframe';
+import AframeServer from '../pages/Challau/Challau';
 
 //Context usado para pasar los temas de daltonismo
 export const ThemesContext = React.createContext();
@@ -36,7 +36,7 @@ function Routes() {
                     <Stack.Screen name="Registro" component={Registro} options={{ headerShown: false }} />
                     <Stack.Screen name="Inicio" component={Inicio} options={{ headerShown: false }} />
                     <Stack.Screen name="AR" component={AR} options={{ headerShown: false }} />
-                    <Stack.Screen name="Challau" component={Challau} options={{ headerShown: true }} />
+                    <Stack.Screen name="AframeServer" component={AframeServer} options={{ headerShown: true }} />
                     <Stack.Screen name="Aframe" component={Aframe} options={{ headerShown: true }} />
 
                 </Stack.Navigator>

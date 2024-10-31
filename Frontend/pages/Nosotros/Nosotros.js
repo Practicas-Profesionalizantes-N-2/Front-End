@@ -40,7 +40,7 @@ const Nosotros = () => {
 
                         Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
                     <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver al inicio </Boton>
-                    <Boton onPress={() => navigation.navigate('Challau')}>ir a Challau</Boton>
+                    <Boton onPress={() => navigation.navigate('AframeServer')}>ir a AframeServer</Boton>
                     <Boton onPress={() => navigation.navigate('Aframe')}>ir a AFrame</Boton>
 
 
