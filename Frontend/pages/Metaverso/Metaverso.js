@@ -11,7 +11,7 @@ import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
 
 
-const AframeServer = () => {
+const Metaverso = () => {
     const navigation = useNavigation();
     const theme = useContext(ThemesContext)
     return (
@@ -26,7 +26,7 @@ const AframeServer = () => {
                   <!DOCTYPE html>
                   <html>
                     <body>
-                      <div id="baseDiv"><iframe width="100%" height="100%" style="position:absolute; top: 100; left: 0" frameborder="0" allow="camera; microphone; fullscreen; display-capture; autoplay" src="http://http://149.50.131.9:3012/"/></iframe></div>
+                      <div id="baseDiv"><iframe width="100%" height="100%" style="position:absolute; top: 100; left: 0" frameborder="0" allow="camera; microphone; fullscreen; display-capture; autoplay" src="http://149.50.131.9:3012/"/></iframe></div>
                     </body>
                   </html>
             `,
@@ -37,4 +37,4 @@ const AframeServer = () => {
     )
 }
 
-export default AframeServer
+export default Metaverso

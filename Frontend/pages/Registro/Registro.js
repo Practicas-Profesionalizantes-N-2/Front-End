@@ -112,7 +112,6 @@ export default function Registro() {
                         placeholder="Edad"
                         keyboardType="numeric" />
                     <Boton onPress={() => handleRegistro()} > Registrarme </Boton>
-                    <Boton onPress={() => navigation.push('Nosotros')}> Ir a Nosotros </Boton>
                 </View>
 
                 <Modal visible={modalVisible} transparent={true} animationType="fade">
