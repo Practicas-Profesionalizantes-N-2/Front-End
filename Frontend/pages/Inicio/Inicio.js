@@ -37,7 +37,9 @@ const Inicio = () => {
                 <View style={Contenedor.containerdentro}>
                     <TituloInicio>Mi ESI</TituloInicio>
                     <TituloInicio> Comenzá a explorar </TituloInicio>
-                    <Boton onPress={() => navigation.navigate('AR')}>Iniciar </Boton>
+
+                    <Boton onPress={() => navigation.navigate('Metaverso')}>Entrar al metaverso </Boton>
+
                 </View>
 
                 <View style={Contenedor.containerdelfiltro}>
@@ -46,6 +48,9 @@ const Inicio = () => {
                         <Boton2 onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopía</Boton2>
                         <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopía</Boton2>
                         <Boton2 onPress={() => handleTheme(themeProtanopia)}>Protanopía</Boton2>
+
+                        <Boton onPress={() => navigation.push('Nosotros')}> Ir a Nosotros </Boton>
+
                     </View>
                 </View>
 

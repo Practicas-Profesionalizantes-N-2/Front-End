@@ -10,7 +10,8 @@ import Login from '../pages/Login/Login';
 import Nosotros from '../pages/Nosotros/Nosotros';
 import Registro from '../pages/Registro/Registro';
 import Inicio from '../pages/Inicio/Inicio';
-import AR from '../pages/Camara/Camara';
+import Metaverso from '../pages/Metaverso/Metaverso';
+
 
 //la constante stack contiene todas las Pantallas (componentes)
 const Stack = createNativeStackNavigator();
@@ -33,7 +34,8 @@ function Routes() {
                     <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
                     <Stack.Screen name="Registro" component={Registro} options={{ headerShown: false }} />
                     <Stack.Screen name="Inicio" component={Inicio} options={{ headerShown: false }} />
-                    <Stack.Screen name="AR" component={AR} options={{ headerShown: false }} />
+                    <Stack.Screen name="Metaverso" component={Metaverso} options={{ headerShown: true }} />
+
                 </Stack.Navigator>
             </NavigationContainer>
         </ThemesContext.Provider >

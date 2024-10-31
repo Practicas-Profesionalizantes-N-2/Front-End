@@ -122,8 +122,11 @@ export default function Registro() {
                         keyboardType="numeric" />
 
                     <Boton onPress={() => handleRegistro()} > Registrarme </Boton>
+<<<<<<< HEAD
                     <Boton onPress={() => navigation.push('Nosotros')}> Ir a Nosotros </Boton>
 
+=======
+>>>>>>> Facundo
                 </View>
 
                 <Modal visible={modalVisible} transparent={true} animationType="fade">
