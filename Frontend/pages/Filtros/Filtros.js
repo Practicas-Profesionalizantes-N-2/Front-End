@@ -37,9 +37,7 @@ const Filtros = () => {
         <ThemeProvider theme={theme.theme}>
             <ScrollView style={Contenedor.total}>
                        
-            <TituloBienvenida>
-                       Filtros de daltonismo
-                    </TituloBienvenida>
+            <TituloCabecera> Filtros de daltonismo </TituloCabecera>
                     <TituloNormal>
                      Podes seleccionar el filtro que necesites a continuación:
                     </TituloNormal>
@@ -53,7 +51,7 @@ const Filtros = () => {
                         <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopía</Boton2>
                         <Boton2 onPress={() => handleTheme(themeProtanopia)}>Protanopía</Boton2>
 
-                        <Boton onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver al inicio</Boton>
+                        <Boton2 onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver al inicio</Boton2>
                     </View>
                 </View>
 

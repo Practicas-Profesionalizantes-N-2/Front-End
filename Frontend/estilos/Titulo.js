@@ -31,7 +31,7 @@ export const TituloInicio = styled.Text
     font-weight:700;
     margin:10%;
     marginBottom:5%;
-    marginTop:5%;
+    marginTop:10%;
     `
     ;
     export const TituloNosotros = styled.Text
