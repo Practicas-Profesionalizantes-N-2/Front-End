@@ -11,6 +11,7 @@ import Nosotros from '../pages/Nosotros/Nosotros';
 import Registro from '../pages/Registro/Registro';
 import Inicio from '../pages/Inicio/Inicio';
 import Metaverso from '../pages/Metaverso/Metaverso';
+import Filtros from '../pages/Filtros/Filtros';
 
 
 //la constante stack contiene todas las Pantallas (componentes)
@@ -35,6 +36,7 @@ function Routes() {
                     <Stack.Screen name="Registro" component={Registro} options={{ headerShown: false }} />
                     <Stack.Screen name="Inicio" component={Inicio} options={{ headerShown: false }} />
                     <Stack.Screen name="Metaverso" component={Metaverso} options={{ headerShown: true }} />
+                    <Stack.Screen name="Filtros" component={Filtros} options={{ headerShown: true }} />
 
                 </Stack.Navigator>
             </NavigationContainer>

@@ -39,21 +39,9 @@ const Inicio = () => {
                     <TituloInicio> Comenzá a explorar </TituloInicio>
 
                     <Boton onPress={() => navigation.navigate('Metaverso')}>Entrar al metaverso </Boton>
+                    <Boton onPress={() => navigation.navigate('Filtros')}>Cambio de filtros </Boton>
 
                 </View>
-
-                <View style={Contenedor.containerdelfiltro}>
-                    <View style={Contenedor.contenedorfiltro}>
-                        <Boton2 onPress={() => handleTheme(themeDefault)}>Sin filtro</Boton2>
-                        <Boton2 onPress={() => handleTheme(themeDeuteranopia)}>Deuteranopía</Boton2>
-                        <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopía</Boton2>
-                        <Boton2 onPress={() => handleTheme(themeProtanopia)}>Protanopía</Boton2>
-
-                        <Boton onPress={() => navigation.push('Home')}> Volver </Boton>
-
-                    </View>
-                </View>
-
             </ScrollView>
         </ThemeProvider>
     )

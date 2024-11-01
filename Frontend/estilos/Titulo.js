@@ -25,13 +25,13 @@ export const TituloInicio = styled.Text
     ;
     export const TituloNormal = styled.Text
     `
-    font-size: 20px;
+    font-size: 18px;
     color: ${(props) => props.theme.background};
     text-align:center;
     font-weight:700;
-    margin:1%;
-    marginBottom:-5%;
-    marginTop:10%;
+    margin:10%;
+    marginBottom:5%;
+    marginTop:5%;
     `
     ;
     export const TituloChico = styled.Text

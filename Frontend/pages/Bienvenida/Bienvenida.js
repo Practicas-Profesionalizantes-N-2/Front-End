@@ -35,6 +35,8 @@ const Bienvenida = () => {
                         <Logo style={styled.fotos} source={require('../../assets/mesiLogo.jpeg')} />
                         <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesión - Profesor</Boton>
                         <Boton onPress={() => navigation.navigate('Metaverso')}>Ingresar a Metaverso - Alumno</Boton>
+                        <Boton onPress={() => navigation.navigate('Filtros')}>Accesibilidad</Boton>
+
                     </View>
                 </ScrollView>
             </ThemeProvider>
