@@ -35,7 +35,7 @@ function Routes() {
                     <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
                     <Stack.Screen name="Registro" component={Registro} options={{ headerShown: false }} />
                     <Stack.Screen name="Inicio" component={Inicio} options={{ headerShown: false }} />
-                    <Stack.Screen name="Metaverso" component={Metaverso} options={{ headerShown: true }} />
+                    <Stack.Screen name="Metaverso" component={Metaverso} options={{ headerShown: false }} />
                     <Stack.Screen name="Filtros" component={Filtros} options={{ headerShown: false }} />
 
                 </Stack.Navigator>
