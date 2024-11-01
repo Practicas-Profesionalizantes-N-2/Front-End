@@ -7,10 +7,10 @@ import styled from 'styled-components/native'
 //Logo y estilos 
 export const Logo2 = styled(Image)
     `
-    marginTop:10%;
-    marginBottom:13%;
+    marginTop:5%;
+    marginBottom:9%;
     height: 40%;
-    width:70%;
+    width:60%;
     padding:20%;
 `
 ;

@@ -4,18 +4,18 @@ import styled from 'styled-components/native';
 //estilos del boton
 export const Boton = styled.Text
     `
-    font-size: 23px;
+    font-size: 22px;
     color: white;
     font-weight:600;
     background-color: ${(props) => props.theme.background};
     text-align:center;
-    margin:5%;
+    margin:4%;
     padding:3%;
     border-radius: 10px;
     `;
     export const Boton2 = styled.Text
     `
-    font-size: 23px;
+    font-size: 20px;
     color: white;
     font-weight:600;
     background-color: ${(props) => props.theme.background};
