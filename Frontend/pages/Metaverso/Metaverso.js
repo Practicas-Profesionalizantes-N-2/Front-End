@@ -17,7 +17,7 @@ const Metaverso = () => {
     return (
         <ThemeProvider theme={theme.theme}>
             <WebView
-          scalesPageToFit={true}
+          scalesPageToFit={false}
           bounces={false}
           javaScriptEnabled
           style={{ height: 1}}
