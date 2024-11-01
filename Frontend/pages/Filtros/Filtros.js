@@ -25,6 +25,8 @@ import styled from 'styled-components/native'
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
 
+import Icon from 'react-native-vector-icons/Feather';
+
 const Filtros = () => {
     const navigation = useNavigation();
     const theme = useContext(ThemesContext)
@@ -51,8 +53,7 @@ const Filtros = () => {
                         <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopía</Boton2>
                         <Boton2 onPress={() => handleTheme(themeProtanopia)}>Protanopía</Boton2>
 
-                        <Boton onPress={() => navigation.push('Home')}> Volver </Boton>
-
+                        <Boton onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver al inicio</Boton>
                     </View>
                 </View>
 

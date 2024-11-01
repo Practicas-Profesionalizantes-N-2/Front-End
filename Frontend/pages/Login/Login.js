@@ -6,6 +6,7 @@ import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native'
 //habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/Feather';
 
 // importamos
 import { Contenedor } from '../../estilos/Container';
@@ -84,9 +85,9 @@ export default function Login() {
                         type="password"
                         secureTextEntry={true} />
 
-                    <Boton onPress={() => handleInicioSesion()}>Iniciar Sesión</Boton>
-                    <Boton onPress={() => navigation.navigate('Registro')}>Registrarme</Boton>
-                    <Boton onPress={() => navigation.push('Home')}>Volver al inicio</Boton>
+                    <Boton onPress={() => handleInicioSesion()}><Icon name="user-plus" size={25} color="white" />  Iniciar Sesión</Boton>
+                    <Boton onPress={() => navigation.navigate('Registro')}> <Icon name="user-check" size={25} color="white" />   Registrarme</Boton>
+                    <Boton onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver al inicio</Boton>
                     
                 </View>
 

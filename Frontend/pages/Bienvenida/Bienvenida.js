@@ -6,6 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 // para hacer los estilos propios
 import styled from 'styled-components/native'
 
+import Icon from 'react-native-vector-icons/Feather';
+
 // importamos 
 import { Boton } from '../../estilos/Boton';
 import { TituloBienvenida, TituloCabecera } from '../../estilos/Titulo';
@@ -33,11 +35,11 @@ const Bienvenida = () => {
                     <View style={Contenedor.containerdentro}>
                         <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
                         <Logo style={styled.fotos} source={require('../../assets/mesiLogo.jpeg')} />                    
-                        <Boton onPress={() => navigation.navigate('Login')}> Profesor</Boton>
-                        <Boton onPress={() => navigation.navigate('Metaverso')}>Alumno</Boton>
-                        <Boton onPress={() => navigation.navigate('Filtros')}>Accesibilidad</Boton>
-                        <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
-
+                        <Boton onPress={() => navigation.navigate('Login')}><Icon name="user-plus" size={25} color="white" />   Profesor </Boton>
+                        <Boton onPress={() => navigation.navigate('Metaverso')}><Icon name="user" size={25} color="white" />   Alumno - Metaverso</Boton>
+                        <Boton onPress={() => navigation.navigate('Filtros')}><Icon name="sliders" size={25} color="white" />   Accesibilidad</Boton>
+                        <Boton onPress={() => navigation.push('Nosotros')}> <Icon name="users" size={25} color="white" />    Nosotros </Boton>
+                      
                     </View>
                 </ScrollView>
             </ThemeProvider>

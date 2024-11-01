@@ -21,6 +21,7 @@ import { WebView } from 'react-native-webview'
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
+import Icon from 'react-native-vector-icons/Feather';
 
 
 const Nosotros = () => {
@@ -39,7 +40,7 @@ const Nosotros = () => {
                     <TituloChico> Integrantes:
 
                         Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
-                    <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver</Boton>
+                        <Boton onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver</Boton>
 
 
                 </View>

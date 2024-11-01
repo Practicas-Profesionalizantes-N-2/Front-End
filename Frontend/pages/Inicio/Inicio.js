@@ -22,6 +22,7 @@ import {
 //import para manejar los temas.
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
+import Icon from 'react-native-vector-icons/Feather';
 
 const Inicio = () => {
     const navigation = useNavigation();
