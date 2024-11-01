@@ -22,7 +22,7 @@ export const Boton = styled.Text
     text-align:center;
     margin:2%;
     padding:3%;
-    width:160px;
+    width:40%;
     border-radius: 10px;
     flexDirection: row;
     `
