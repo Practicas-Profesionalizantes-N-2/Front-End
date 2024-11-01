@@ -26,7 +26,7 @@ const Metaverso = () => {
                   <!DOCTYPE html>
                   <html>
                     <body>
-                      <div id="baseDiv"><iframe width="100%" height="100%" style="position:absolute; top: 100; left: 0" frameborder="0" allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://vps-4480743-x.dattaweb.com/"/></iframe></div>
+                      <div id="baseDiv"><iframe width="100%" height="100%" style="position:absolute; top: 2rem; left: 0" frameborder="0" allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://vps-4480743-x.dattaweb.com/"/></iframe></div>
                     </body>
                   </html>
             `,
