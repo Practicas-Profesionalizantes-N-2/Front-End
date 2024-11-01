@@ -33,8 +33,8 @@ const Bienvenida = () => {
                     <View style={Contenedor.containerdentro}>
                         <TituloBienvenida> Mi Educación Sexual Integral</TituloBienvenida>
                         <Logo style={styled.fotos} source={require('../../assets/mesiLogo.jpeg')} />
-                        <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesión</Boton>
-                        <Boton onPress={() => navigation.navigate('Registro')}>Registrarme</Boton>
+                        <Boton onPress={() => navigation.navigate('Login')}>Iniciar Sesión - Profesor</Boton>
+                        <Boton onPress={() => navigation.navigate('Metaverso')}>Ingresar a Metaverso - Alumno</Boton>
                     </View>
                 </ScrollView>
             </ThemeProvider>

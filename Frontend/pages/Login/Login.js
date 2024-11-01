@@ -85,7 +85,7 @@ export default function Login() {
                         secureTextEntry={true} />
 
                     <Boton onPress={() => handleInicioSesion()}>Iniciar Sesión</Boton>
-                    <Boton onPress={() => navigation.push('Nosotros')}>Nosotros</Boton>
+                    <Boton onPress={() => navigation.push('Home')}>Volver al inicio</Boton>
                     
                 </View>
 

@@ -39,7 +39,7 @@ const Nosotros = () => {
                     <TituloChico> Integrantes:
 
                         Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
-                    <Boton onPress={() => navigation.navigate('Inicio')} options={{ headerShown: false }}> Volver al inicio </Boton>
+                    <Boton onPress={() => navigation.navigate('Home')} options={{ headerShown: false }}> Volver</Boton>
 
 
                 </View>

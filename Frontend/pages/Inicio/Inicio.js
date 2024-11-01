@@ -49,7 +49,7 @@ const Inicio = () => {
                         <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopía</Boton2>
                         <Boton2 onPress={() => handleTheme(themeProtanopia)}>Protanopía</Boton2>
 
-                        <Boton onPress={() => navigation.push('Nosotros')}> Ir a Nosotros </Boton>
+                        <Boton onPress={() => navigation.push('Home')}> Volver </Boton>
 
                     </View>
                 </View>
