@@ -16,6 +16,8 @@ import Metaverso from '../pages/Metaverso/Metaverso';
 //la constante stack contiene todas las Pantallas (componentes)
 const Stack = createNativeStackNavigator();
 
+const cors = require('cors');
+
 //importamos los temas para el provider 
 import { themeDefault } from '../estilos/Boton';
 
