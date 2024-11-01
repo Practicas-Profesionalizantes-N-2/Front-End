@@ -9,6 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 // importamos los elementos que creamos en componentes
 import { TituloCabecera, TituloInicio } from '../../estilos/Titulo';
 import { Contenedor } from '../../estilos/Container';
+
 import {
     Boton, Boton2,
     themeDefault,
@@ -23,6 +24,8 @@ import {
 import { ThemeProvider } from 'styled-components';
 import { ThemesContext } from '../../Routes';
 import Icon from 'react-native-vector-icons/Feather';
+import { Logo3 } from '../../estilos/Logo3';
+import styled from 'styled-components/native'
 
 const Inicio = () => {
     const navigation = useNavigation();
@@ -36,11 +39,11 @@ const Inicio = () => {
                 <TituloCabecera> Bienvenido </TituloCabecera>
                 
                 <View style={Contenedor.containerdentro}>
-                    <TituloInicio>Mi ESI</TituloInicio>
-                    <TituloInicio> Comenzá a explorar </TituloInicio>
+                <Logo3 style={styled.fotos} source={require('../../assets/mta.webp')} />        
+                    <TituloInicio> Comenza la experiencia</TituloInicio>
 
-                    <Boton onPress={() => navigation.navigate('Metaverso')}>Entrar al metaverso </Boton>
-                    <Boton onPress={() => navigation.navigate('Filtros')}>Cambio de filtros </Boton>
+                    <Boton onPress={() => navigation.navigate('Metaverso')}> <Icon name="play-circle" size={30} color="white" />   Entrar al metaverso </Boton>
+                    <Boton onPress={() => navigation.navigate('Filtros')}><Icon name="sliders" size={25} color="white" />   Accesibilidad</Boton>
 
                 </View>
             </ScrollView>

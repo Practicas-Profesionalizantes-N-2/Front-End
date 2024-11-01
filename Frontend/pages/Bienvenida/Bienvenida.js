@@ -39,7 +39,6 @@ const Bienvenida = () => {
                         <Boton onPress={() => navigation.navigate('Metaverso')}><Icon name="user" size={25} color="white" />   Alumno - Metaverso</Boton>
                         <Boton onPress={() => navigation.navigate('Filtros')}><Icon name="sliders" size={25} color="white" />   Accesibilidad</Boton>
                         <Boton onPress={() => navigation.push('Nosotros')}> <Icon name="users" size={25} color="white" />    Nosotros </Boton>
-                      
                     </View>
                 </ScrollView>
             </ThemeProvider>

@@ -9,12 +9,12 @@ export const TituloBienvenida = styled.Text
     color: ${(props) => props.theme.background};
     text-align:center;
     font-weight:700;
-    margin:10%;
+    margin:5%;
     `
     ;
 export const TituloInicio = styled.Text
     `
-    font-size: 40px;
+    font-size: 35px;
     color: ${(props) => props.theme.background};
     text-align:center;
     font-weight:700;
@@ -32,6 +32,17 @@ export const TituloInicio = styled.Text
     margin:10%;
     marginBottom:5%;
     marginTop:5%;
+    `
+    ;
+    export const TituloNosotros = styled.Text
+    `
+    font-size: 25px;
+    color: ${(props) => props.theme.background};
+    text-align:center;
+    font-weight:700;
+    margin:5%;
+    marginBottom:8%;
+    marginTop:8%;
     `
     ;
     export const TituloChico = styled.Text

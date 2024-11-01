@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 //componentes con sus estilos
-import { TituloBienvenida, TituloCabecera, TituloChico } from '../../estilos/Titulo';
+import { TituloBienvenida, TituloCabecera, TituloChico, TituloNormal, TituloNosotros } from '../../estilos/Titulo';
 import { Boton } from '../../estilos/Boton';
 import { Contenedor } from '../../estilos/Container';
 import { Logo } from '../../estilos/Logo';
@@ -33,20 +33,21 @@ const Nosotros = () => {
             <ScrollView style={Contenedor.total}>
                 <TituloCabecera> Nosotros </TituloCabecera>
                 <View style={Contenedor.containerdentro}>
-                    <TituloBienvenida>
-                        Somos un equipo de estudiantes del ITS Cipolletti
-                    </TituloBienvenida>
                     <Logo style={styled.fotos} source={require('../../assets/mesi.jpeg')} />
-                    <TituloChico> Integrantes:
 
-                        Aranguiz Micaela, Orozco Mariano, Folatelli Facundo, García Diego, Carrera Jeremias, Quintana Tomás, Tame Lorenzo, Gonzalez Agustín, Saez Lucas, Ruiz Bruno </TituloChico>
-                        <Boton onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver</Boton>
+                    <TituloNosotros>
+                        Somos un equipo de estudiantes del ITS Cipolletti, y comenzamos este proyecto en 2023.
+                    </TituloNosotros>
+                  
+                    <TituloChico>
+                    <Icon name="users" size={30} color="purple" />      Micaela, Mariano, Facundo, Diego, Jeremias, Tomás, Lorenzo, Agustín, Lucas, Bruno </TituloChico>
+                    <Boton onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver</Boton>
 
 
                 </View>
             </ScrollView>
 
-            
+
 
         </ThemeProvider>
     )
