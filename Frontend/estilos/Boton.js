@@ -15,14 +15,14 @@ export const Boton = styled.Text
     `;
     export const Boton2 = styled.Text
     `
-    font-size: 20px;
+    font-size:16px;
     color: white;
     font-weight:600;
     background-color: ${(props) => props.theme.background};
     text-align:center;
     margin:2%;
     padding:3%;
-    width:160px;
+    width:40%;
     border-radius: 10px;
     flexDirection: row;
     `
