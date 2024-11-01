@@ -51,7 +51,7 @@ const Filtros = () => {
                         <Boton2 onPress={() => handleTheme(themeTritanopia)}>Tritanopía</Boton2>
                         <Boton2 onPress={() => handleTheme(themeProtanopia)}>Protanopía</Boton2>
 
-                        <Boton2 onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver al inicio</Boton2>
+                        <Boton2 onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver</Boton2>
                     </View>
                 </View>
 

@@ -20,8 +20,8 @@ export const Boton = styled.Text
     font-weight:600;
     background-color: ${(props) => props.theme.background};
     text-align:center;
-    margin:1%;
-    padding:1%;
+    margin:2%;
+    padding:2%;
     width:160px;
     border-radius: 10px;
     flexDirection: row;
