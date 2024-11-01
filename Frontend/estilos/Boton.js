@@ -21,7 +21,7 @@ export const Boton = styled.Text
     background-color: ${(props) => props.theme.background};
     text-align:center;
     margin:2%;
-    padding:2%;
+    padding:3%;
     width:160px;
     border-radius: 10px;
     flexDirection: row;
