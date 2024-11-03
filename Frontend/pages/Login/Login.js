@@ -87,7 +87,7 @@ export default function Login() {
 
                     <Boton onPress={() => handleInicioSesion()}><Icon name="user-plus" size={25} color="white" />  Iniciar Sesión</Boton>
                     <Boton onPress={() => navigation.navigate('Registro')}> <Icon name="user-check" size={25} color="white" />   Registrarme</Boton>
-                    <Boton onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver al inicio</Boton>
+                    <Boton onPress={() =>  navigation.goBack()}> <Icon name="home" size={30} color="white" />   Volver al inicio</Boton>
                     
                 </View>
 

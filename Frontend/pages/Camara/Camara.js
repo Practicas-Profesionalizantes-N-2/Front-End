@@ -24,7 +24,7 @@ export default function AR() {
       <View style={CamaraStyles.container}>
         <ImageBackground source={image} resizeMode="cover" style={CamaraStyles.image}>
           <Text style={CamaraStyles.text}>por ahora, imagina que aca aparece la realidad aumentada</Text>
-          <Boton onPress={() => navigation.navigate('Home')}> Volver al inicio </Boton>
+          <Boton onPress={() => navigation.goBack()}>  Volver al inicio </Boton>
         </ImageBackground>
       </View>
     </ThemeProvider>

@@ -6,9 +6,12 @@ import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 // Importamos estilos propios
 import { Boton } from '../../estilos/Boton';
+import { Boton2 } from '../../estilos/Boton';
 import { InputStyles } from '../../estilos/Input';
 import { Contenedor } from '../../estilos/Container';
 import { TituloCabecera } from '../../estilos/Titulo';
+import Icon from 'react-native-vector-icons/Feather';
+
 
 // Habilita la navegacion hacia otras pantallas
 import { useNavigation } from '@react-navigation/native';
@@ -121,7 +124,8 @@ export default function Registro() {
                         placeholder="Edad"
                         keyboardType="numeric" />
 
-                    <Boton onPress={() => handleRegistro()} > Registrarme </Boton>
+                    <Boton onPress={() => handleRegistro()} > <Icon name="user-check" size={25} color="white" />   Registrarme </Boton>
+                    <Boton onPress={() =>  navigation.goBack()}> <Icon name="home" size={30} color="white" />   Volver</Boton>
                 </View>
 
                 <Modal visible={modalVisible} transparent={true} animationType="fade">
