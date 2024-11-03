@@ -21,17 +21,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.jalsopi.Frontend"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "c0d077ba-2796-47a4-bb4b-11388665be01"
-      }
-    },
-    "owner": "jalsopi"
+    }
   }
 }
