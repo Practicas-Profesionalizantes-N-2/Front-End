@@ -5,7 +5,7 @@ export const Contenedor = StyleSheet.create({
     //container que utilizamos de manera general en cada una de las vistas
     containerdentro: {
         backgroundColor: 'white',
-        padding: '7%',
+        padding: '8%',
         marginTop: '15%',
         display: 'flex',
         justifyContent: 'center'

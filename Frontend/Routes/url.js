@@ -1,6 +1,6 @@
  // Direccion la brinda don web y la cambian cada vez que arranca el server
 
-const ip = '149.50.131.9'
+ const ip = 'vps-4480743-x.dattaweb.com';
 
-export const URLregister = `http://${ip}:3010/api/register`
-export const URLlogin = `http://${ip}:3010/api/login`
+ export const URLregister = `https://${ip}/api/register`;
+ export const URLlogin = `https://${ip}/api/login`;
