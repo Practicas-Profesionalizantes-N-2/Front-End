@@ -40,9 +40,9 @@ const Inicio = () => {
                 
                 <View style={Contenedor.containerdentro}>
                 <Logo3 style={styled.fotos} source={require('../../assets/mta.webp')} />        
-                    <TituloInicio> Comenza la experiencia</TituloInicio>
+                    <TituloInicio> Comenzá la experiencia</TituloInicio>
 
-                    <Boton onPress={() => navigation.navigate('Metaverso')}> <Icon name="play-circle" size={30} color="white" />   Entrar al metaverso </Boton>
+                    <Boton onPress={() => navigation.navigate('Metaverso')}><Icon name="play-circle" size={30} color="white" />   Entrar al metaverso </Boton>
                     <Boton onPress={() => navigation.navigate('Filtros')}><Icon name="sliders" size={25} color="white" />   Accesibilidad</Boton>
 
                 </View>
