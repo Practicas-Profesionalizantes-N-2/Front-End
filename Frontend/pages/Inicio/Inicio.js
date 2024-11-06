@@ -12,6 +12,7 @@ import { Contenedor } from '../../estilos/Container';
 
 import {
     Boton, Boton2,
+    BotonNavegation,
     themeDefault,
     themeDeuteranopia,
     themeProtanopia,
@@ -42,8 +43,8 @@ const Inicio = () => {
                 <Logo3 style={styled.fotos} source={require('../../assets/mta.webp')} />        
                     <TituloInicio> Comenzá la experiencia</TituloInicio>
 
-                    <Boton onPress={() => navigation.navigate('Metaverso')}> <Icon name="play-circle" size={30} color="white" />   Entrar al metaverso </Boton>
-                    <Boton onPress={() => navigation.navigate('Filtros')}><Icon name="sliders" size={25} color="white" />   Accesibilidad</Boton>
+                    <BotonNavegation ruta={'Metaverso'} buttonText={"Entrar al metaverso"}></BotonNavegation>
+                    <BotonNavegation ruta={'Filtros'} buttonText={"Accesibilidad"}></BotonNavegation>
 
                 </View>
             </ScrollView>
