@@ -5,7 +5,7 @@ import React, { useContext, useState } from 'react';
 import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 // Importamos estilos propios
-import { Boton } from '../../estilos/Boton';
+import { Boton, BotonFuncion, BotonNavegation } from '../../estilos/Boton';
 import { InputStyles } from '../../estilos/Input';
 import { Contenedor } from '../../estilos/Container';
 import { TituloCabecera } from '../../estilos/Titulo';
@@ -121,7 +121,9 @@ export default function Registro() {
                         placeholder="Edad"
                         keyboardType="numeric" />
 
-                    <Boton onPress={() => handleRegistro()} > Registrarme </Boton>
+                    <BotonFuncion funciona={() => handleRegistro()} buttonText={"Registrarme"}> </BotonFuncion>
+                    <BotonFuncion funciona={() => navigation.goBack()} buttonText={"Volver"}> </BotonFuncion>
+
                 </View>
 
                 <Modal visible={modalVisible} transparent={true} animationType="fade">

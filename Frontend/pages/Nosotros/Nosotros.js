@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 //componentes con sus estilos
 import { TituloBienvenida, TituloCabecera, TituloChico, TituloNormal, TituloNosotros } from '../../estilos/Titulo';
-import { Boton } from '../../estilos/Boton';
+import { Boton, BotonFuncion } from '../../estilos/Boton';
 import { Contenedor } from '../../estilos/Container';
 import { Logo } from '../../estilos/Logo';
 
@@ -41,7 +41,7 @@ const Nosotros = () => {
                   
                     <TituloChico>
                     <Icon name="users" size={30} color="purple" />      Micaela, Mariano, Facundo, Diego, Jeremias, Tomás, Lorenzo, Agustín, Lucas, Bruno </TituloChico>
-                    <Boton onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver</Boton>
+                    <BotonFuncion funciona={() => navigation.push('Home')} buttonText={'Volver'} ></BotonFuncion>
 
 
                 </View>

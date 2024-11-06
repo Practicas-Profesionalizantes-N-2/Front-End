@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/Feather';
 // importamos
 import { Contenedor } from '../../estilos/Container';
 import { InputStyles } from '../../estilos/Input';
-import { Boton } from '../../estilos/Boton';
+import { BotonFuncion, BotonNavegation } from '../../estilos/Boton';
 import { TituloCabecera } from '../../estilos/Titulo';
 
 //import para manejar los temas.
@@ -85,9 +85,9 @@ export default function Login() {
                         type="password"
                         secureTextEntry={true} />
 
-                    <Boton onPress={() => handleInicioSesion()}><Icon name="user-plus" size={25} color="white" />  Iniciar Sesión</Boton>
-                    <Boton onPress={() => navigation.navigate('Registro')}> <Icon name="user-check" size={25} color="white" />   Registrarme</Boton>
-                    <Boton onPress={() => navigation.push('Home')}> <Icon name="home" size={30} color="white" />   Volver al inicio</Boton>
+                    <BotonFuncion funciona={()=> handleInicioSesion()} buttonText={"Iniciar Sesión"}><Icon name="user-plus" size={25} color="white" /> </BotonFuncion>
+                    <BotonNavegation ruta={'Registro'} buttonText={"Registrarme"}><Icon name="user-check" size={25} color="white" />    </BotonNavegation>
+                    <BotonNavegation ruta={'Home'} buttonText={"Volver al inicio"}><Icon name="home" size={25} color="white" />    </BotonNavegation>
                     
                 </View>
 
